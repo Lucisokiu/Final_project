@@ -131,60 +131,6 @@
 
                 <div class="cart-items">
 
-                  <c:forEach items="${ListP1}" var = "o">
-
-                  <div class="cart-row">
-                          <div class="cart-item cart-column">
-                                  <img class="cart-item-image" src="${o.productImg_path}" width="100" height="100">
-                                  <span class="cart-item-title">${o.product_name}</span>
-                          </div>
-
-                          <span class="cart-price cart-column">${o.price}</span>
-
-                          <div class="cart-quantity cart-column">
-                                <input class="cart-quantity-input" type="number" value="0">
-                                <button class="modal-btn btn-danger" type="button">Delete</button>
-                          </div>
-
-                        </div>
-                  </c:forEach>
-
-
-                  <c:forEach items="${ListP2}" var = "o">
-
-                  <div class="cart-row">
-                          <div class="cart-item cart-column">
-                                  <img class="cart-item-image" src="${o.productImg_path}" width="100" height="100">
-                                  <span class="cart-item-title">${o.product_name}</span>
-                          </div>
-
-                          <span class="cart-price cart-column">${o.price}</span>
-
-                          <div class="cart-quantity cart-column">
-                                <input class="cart-quantity-input" type="number" value="0">
-                                <button class="modal-btn btn-danger" type="button">Delete</button>
-                          </div>
-
-                        </div>
-                  </c:forEach>
-
-                  <c:forEach items="${ListP3}" var = "o">
-
-                          <div class="cart-row">
-                                  <div class="cart-item cart-column">
-                                          <img class="cart-item-image" src="${o.productImg_path}" width="100" height="100">
-                                          <span class="cart-item-title">${o.product_name}</span>
-                                  </div>
-
-                                  <span class="cart-price cart-column">${o.price}</span>
-
-                                  <div class="cart-quantity cart-column">
-                                        <input class="cart-quantity-input" type="number" value="0">
-                                        <button class="modal-btn btn-danger" type="button">Delete</button>
-                                  </div>
-
-                                </div>
-                          </c:forEach>
 
               </div>
 

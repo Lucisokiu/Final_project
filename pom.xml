@@ -22,16 +22,11 @@
             <scope>provided</scope>
         </dependency>
         
-        <!-- taglibs-standard-spec-*.jar -->
-        <!-- http://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-spec -->
         <dependency>
             <groupId>org.apache.taglibs</groupId>
             <artifactId>taglibs-standard-spec</artifactId>
             <version>1.2.5</version>
         </dependency>
-
-        <!-- taglibs-standard-impl-*.jar -->
-        <!-- http://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
         <dependency>
             <groupId>org.apache.taglibs</groupId>
             <artifactId>taglibs-standard-impl</artifactId>
@@ -57,7 +52,6 @@
             <version>1.6.2</version>
         </dependency>
         
-        <!-- https://mvnrepository.com/artifact/javax.activation/activation -->
         <dependency>
             <groupId>javax.activation</groupId>
             <artifactId>activation</artifactId>
@@ -87,31 +81,6 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
-            <!-- <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.6</version>
-                <executions>
-                    <execution>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${endorsed.dir}</outputDirectory>
-                            <silent>true</silent>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>javax</groupId>
-                                    <artifactId>javaee-endorsed-api</artifactId>
-                                    <version>7.0</version>
-                                    <type>jar</type>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin> -->
 
             
             <plugin>
@@ -142,27 +111,3 @@
     </build>
 
 </project>
-
-
-           <!-- <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-dependency-plugin</artifactId>
-            <executions>
-                <execution>
-                    <phase>package</phase>
-                    <goals><goal>copy</goal></goals>
-                    <configuration>
-                        <artifactItems>
-                            <artifactItem>
-                                <groupId>com.heroku</groupId>
-                                <artifactId>webapp-runner</artifactId>
-                                <version>9.0.68.1</version>
-                                <destFileName>webapp-runner.jar</destFileName>
-                            </artifactItem>
-                        </artifactItems>
-                    </configuration>
-                </execution>
-<<<<<<< HEAD
-            </executions> -->
-=======
-            </executions> -->
->>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134

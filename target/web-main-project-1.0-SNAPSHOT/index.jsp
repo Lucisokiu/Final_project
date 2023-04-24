@@ -147,6 +147,8 @@
 
                             <div class="cart-items">
 
+<<<<<<< HEAD
+=======
                                 <c:forEach items="${ListP1}" var = "o">
 
                                 <div class="cart-row">
@@ -201,6 +203,7 @@
               
                                               </div>
                                         </c:forEach>
+>>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
 
                             </div>
 
@@ -543,12 +546,21 @@
                     <div class="row">
                             <div class="col-md-6 col-lg-3 ftco-animate">
                                     <div class="staff">
+<<<<<<< HEAD
+                                            <div class="img" style="background-image: url(images/img/CEO/ElonMusk.jpg);"></div>
+                                            <div class="text px-4 pt-2">
+                                                    <h3>Phan Hồng Sơn</h3>
+                                                    <span class="position mb-2">CEO, Co Founder</span>
+                                                    <div class="faded">
+                                                            <p>Shoes are not just a fashion statement, they are also an essential accessory that protects our feet from injury and provides comfort during long hours of standing or walking.</p>
+=======
                                             <div class="img" style="background-image: url(images/img/CEO/Phat.jpg);"></div>
                                             <div class="text px-4 pt-2">
                                                     <h3>Dương Tôn Phát</h3>
                                                     <span class="position mb-2">CEO, Co Founder</span>
                                                     <div class="faded">
                                                             <p>Bring power to your steps.</p>
+>>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
                                                             <ul class="ftco-social d-flex">
                                                                     <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                                                                     <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -561,12 +573,21 @@
                             </div>
                             <div class="col-md-6 col-lg-3 ftco-animate">
                                     <div class="staff">
+<<<<<<< HEAD
+                                            <div class="img" style="background-image: url(images/img/CEO/ElonMusk.jpg);"></div>
+                                            <div class="text px-4 pt-2">
+                                                    <h3>Lê Minh Tài</h3>
+                                                    <span class="position mb-2">Leader</span>
+                                                    <div class="faded">
+                                                            <p>Finding the perfect pair of shoes can be a challenging task, but once you do, they can make all the difference in your daily routine.</p>
+=======
                                             <div class="img" style="background-image: url(images/img/CEO/Hoai.jpg);"></div>
                                             <div class="text px-4 pt-2">
                                                     <h3>Nguyễn Thị Thu Hoài</h3>
                                                     <span class="position mb-2">Leader</span>
                                                     <div class="faded">
                                                             <p>Give your feet the beauty treatment that only brand new shoes can give.</p>
+>>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
                                                             <ul class="ftco-social d-flex">
                                                                     <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                                                                     <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -584,7 +605,11 @@
                                                     <h3>Nguyễn Minh Nhựt</h3>
                                                     <span class="position mb-2">CEO</span>
                                                     <div class="faded">
+<<<<<<< HEAD
+                                                            <p>A good pair of running shoes can enhance your performance and prevent injuries, while a stylish pair of heels can add a touch of sophistication to any outfit</p>
+=======
                                                             <p>Your feet will never look the same again.</p>
+>>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
                                                             <ul class="ftco-social d-flex">
                                                                     <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                                                                     <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -599,10 +624,17 @@
                                     <div class="staff">
                                             <div class="img" style="background-image: url(images/img/CEO/ElonMusk.jpg);"></div>
                                             <div class="text px-4 pt-2">
+<<<<<<< HEAD
+                                                    <h3>Phạm Hoàng Huy</h3>
+                                                    <span class="position mb-2">Share holder</span>
+                                                    <div class="faded">
+                                                            <p>Shoes come in all shapes, sizes, and styles, from sneakers and sandals to boots and loafers, and each serves its unique purpose.</p>
+=======
                                                     <h3>Elon Musk</h3>
                                                     <span class="position mb-2">Share holder</span>
                                                     <div class="faded">
                                                             <p>Go faster, go stronger, never stop.</p>
+>>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
                                                             <ul class="ftco-social d-flex">
                                                                     <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                                                                     <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -628,7 +660,11 @@
                                     <div class="heading-section ftco-animate mb-5">
                                             <span class="subheading">This is our secrets</span>
                                             <h2 class="mb-4">The Chosen One</h2>
+<<<<<<< HEAD
+                                            <p>Adidas, Nike, Converse and other footwear brands made headlines with their shoe marketing campaigns. Nike, for example, focuses on creating meaningful stories that evoke emotions. Adidas has emerged as a brand built on innovation, while Zappos delivers highly personalized customer experiences. While you may not have the same budget as these brands, you can still grow your shoe business and stay competitive by thinking outside the box.
+=======
                                             <p>Adidas, Nike, Zappos and other footwear brands made headlines with their shoe marketing campaigns. Nike, for example, focuses on creating meaningful stories that evoke emotions. Adidas has emerged as a brand built on innovation, while Zappos delivers highly personalized customer experiences. While you may not have the same budget as these brands, you can still grow your shoe business and stay competitive by thinking outside the box.
+>>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
                                             </p>
                                             <p><a href="reservation.jsp" class="btn btn-primary">Learn more</a></p>
                                     </div>
@@ -655,7 +691,7 @@
                                                             <div><p>Oct 3, 2022</p></div>
                                                             <div><p>Admin</p></div>
                                                     </div>
-                                                    <h3 class="heading"><a href="blog-single.jsp">Nike phát hành bộ sưu tập giày đá bóng "DAYBREAK"</a></h3>
+                                                    <h3 class="heading"><a href="blog-single.jsp">Nike phát hành bộ sưu tập giày đá bóng "DAYBREAK". Cùng vào chiêm ngưỡng nào</a></h3>
                                                     <p class="clearfix">
                                                             <a href="blog-single.jsp" class="float-left read btn btn-primary">Read more</a>
                                                             <a href="blog-single.jsp" class="float-right meta-chat"><span class="fa fa-comment"></span> 3</a>

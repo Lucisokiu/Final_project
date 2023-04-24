@@ -17,10 +17,7 @@ Factory\CategoryFactory.class
 Shoes\util\MailUtilLocal.class
 Shoes\control\AddProduct.class
 Shoes\entity\Category.class
-<<<<<<< HEAD
 Shoes\control\DetailControl.class
-=======
->>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
 Shoes\control\SubscribeMail.class
 template\HomePage.class
 Factory\CategoryType.class
@@ -33,10 +30,7 @@ template\TemplateMethodPattern.class
 Factory\Category.class
 Shoes\control\SignUpControl.class
 template\BlogPage.class
-<<<<<<< HEAD
 Shoes\control\Checkout.class
-=======
->>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
 Factory\Nike.class
 Shoes\control\MainControl.class
 Shoes\util\MailUtilLocal$1.class

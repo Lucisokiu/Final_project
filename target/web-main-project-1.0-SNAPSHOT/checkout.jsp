@@ -16,11 +16,7 @@
     
     <main role="main">
         <div class="container mt-4">
-<<<<<<< HEAD
             <form action="/Checkout" name="frmthanhtoan" method="post">
-=======
-            <form action="checkout" name="frmthanhtoan" method="post">
->>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
                 <input type="hidden" name="checkoutName" value="${username}">
 
                 <div class="py-5 text-center">

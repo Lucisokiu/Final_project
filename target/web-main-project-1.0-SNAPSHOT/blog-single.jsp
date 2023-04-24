@@ -5,11 +5,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-<<<<<<< HEAD
 <title>Happy Shoes Shop | Blog</title>
-=======
-<title>Magic Shop - Bakery | Blog</title>
->>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
