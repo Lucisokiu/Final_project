@@ -128,6 +128,7 @@
 					</div>
 
           <div class="cart-items">
+          </div>
 
             <c:forEach items="${ListP1}" var = "o">
 
