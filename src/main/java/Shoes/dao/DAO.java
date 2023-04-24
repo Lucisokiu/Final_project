@@ -221,6 +221,36 @@ public class DAO {
         return null;
     }
     
+
+    public Product getProductByID(String id){
+
+
+        String query = "select *\n" +
+                        "FROM product\n" +
+                        "where product_id = ?";
+
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, id);
+            rs = ps.executeQuery();
+
+            while(rs.next()){
+                return new Product(rs.getInt(1),
+                rs.getString(2),
+                rs.getInt(3),
+                rs.getString(4),
+                rs.getDouble(5),
+                rs.getDouble(6),
+                rs.getInt(7),
+                rs.getString(8));
+            }
+        } catch (Exception e) {
+            System.out.println("Failed 2: " + e);
+        }
+
+        return null;
+    }
     
 
     public  void signup(String user, String pass, String fullname, String email, String phone, String address){
