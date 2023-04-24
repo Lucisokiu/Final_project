@@ -161,4 +161,8 @@
                         </artifactItems>
                     </configuration>
                 </execution>
+<<<<<<< HEAD
             </executions> -->
+=======
+            </executions> -->
+>>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134

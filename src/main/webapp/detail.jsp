@@ -144,6 +144,7 @@
                 </div>
                 <div class="cart-items">
 
+<<<<<<< HEAD
                   <!-- <c:forEach items="${ListP1}" var = "o">
 
                   <div class="cart-row">
@@ -198,6 +199,8 @@
 
                                 </div>
                           </c:forEach> -->
+=======
+>>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
 
               </div>
 

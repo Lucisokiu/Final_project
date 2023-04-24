@@ -16,7 +16,11 @@
     
     <main role="main">
         <div class="container mt-4">
+<<<<<<< HEAD
             <form action="/Checkout" name="frmthanhtoan" method="post">
+=======
+            <form action="checkout" name="frmthanhtoan" method="post">
+>>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
                 <input type="hidden" name="checkoutName" value="${username}">
 
                 <div class="py-5 text-center">
@@ -31,7 +35,10 @@
                             <span class="text-muted">Cart</span>
                             <span class="badge badge-secondary badge-pill">2</span>
                         </h4>
+<<<<<<< HEAD
                         
+=======
+>>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
                         <ul class="list-group mb-3">
                             <input type="hidden" name="sanphamgiohang[1][sp_ma]" value="2">
                             <input type="hidden" name="sanphamgiohang[1][gia]" value="39$">
@@ -39,10 +46,17 @@
 
                             <li class="list-group-item d-flex justify-content-between lh-condensed">
                                 <div>
+<<<<<<< HEAD
                                     <h6 class="my-0">Price</h6>
                                     <small class="text-muted">100$ x 1</small>
                                 </div>
                                 <span class="text-muted">100 $</span>
+=======
+                                    <h6 class="my-0">Name Shoes</h6>
+                                    <small class="text-muted">39$ x 2</small>
+                                </div>
+                                <span class="text-muted">78$</span>
+>>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
                             </li>
                             <input type="hidden" name="sanphamgiohang[2][sp_ma]" value="1">
                             <input type="hidden" name="sanphamgiohang[2][gia]" value="39$">
@@ -50,10 +64,17 @@
 
                             <li class="list-group-item d-flex justify-content-between lh-condensed">
                                 <div>
+<<<<<<< HEAD
                                     <h6 class="my-0">Price</h6>
                                     <small class="text-muted">700 $ x 2</small>
                                 </div>
                                 <span class="text-muted">1400 $</span>
+=======
+                                    <h6 class="my-0">Name Shoes</h6>
+                                    <small class="text-muted">39$ x 1</small>
+                                </div>
+                                <span class="text-muted">39$</span>
+>>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
                             </li>
                             <li class="list-group-item d-flex justify-content-between">
                                 <span>Shipping</span>
@@ -61,7 +82,11 @@
                             </li>
                             <li class="list-group-item d-flex justify-content-between">
                                 <span>Total</span>
+<<<<<<< HEAD
                                 <strong>1500 $</strong>
+=======
+                                <strong>122$</strong>
+>>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
                             </li>
                         </ul>
 

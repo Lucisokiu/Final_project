@@ -36,6 +36,11 @@
 </head>
 
 <body>
+<<<<<<< HEAD
+=======
+    <form action="/ManagerAccount" method="post"></form>
+
+>>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
 	<div class="wrap">
 		<div class="container">
 			<div class="row justify-content-between">
@@ -264,7 +269,13 @@
                                 </td>
                                 <td>${o.account_id}</td>
                                 <td>${o.email}</td>
+<<<<<<< HEAD
                                 <td>${o.address}</td>
+=======
+                                <td>
+                                    <td>${o.address}</td>
+                                </td>
+>>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
                                 <td>$${o.userName}</td>
                                 <td>${o.password}</td>
                                 <td>

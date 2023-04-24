@@ -189,7 +189,11 @@
                                                 <div class="text">
                                                         <div class="d-flex">
                                                                 <div class="one-half">
+<<<<<<< HEAD
                                                                         <h3><a href="detail?pid=${o.product_id}">${o.product_name}</a></h3>
+=======
+                                                                        <h3><a href="#">${o.product_name}</a></h3>
+>>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
                                                                 </div>
                                                                 <div class="one-forth">
                                                                         <span class="price">$ ${o.price}</span>
@@ -213,7 +217,11 @@
                                             <div class="text">
                                                 <div class="d-flex">
                                                         <div class="one-half">
+<<<<<<< HEAD
                                                                 <h3><a href="detail?pid=${o.product_id}">${o.product_name}</a></h3>
+=======
+                                                                <h3><a href="#">${o.product_name}</a></h3>
+>>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
                                                         </div>
                                                         <div class="one-forth">
                                                                 <span class="price">$ ${o.price}</span>
@@ -237,7 +245,11 @@
                                                         <div class="text">
                                                                 <div class="d-flex">
                                                                         <div class="one-half">
+<<<<<<< HEAD
                                                                                 <h3><a href="detail?pid=${o.product_id}">${o.product_name}</a></h3>
+=======
+                                                                                <h3><a href="#">${o.product_name}</a></h3>
+>>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
                                                                         </div>
                                                                         <div class="one-forth">
                                                                                 <span class="price">$ ${o.price}</span>

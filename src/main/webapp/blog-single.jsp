@@ -136,7 +136,11 @@
         <span class="cart-price cart-header cart-column">Price</span>
         <span class="cart-quantity cart-header cart-column">Quantity</span>
       </div>
+<<<<<<< HEAD
       <!-- <div class="cart-items">
+=======
+      <div class="cart-items">
+>>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
         <div class="cart-row">
         <div class="cart-item cart-column">
         <img class="cart-item-image" src="images/test-image.jpg" width="100" height="100">
@@ -161,11 +165,19 @@
         </div>
       </div>
       
+<<<<<<< HEAD
       </div> -->
 
       <div class="cart-total">
       <strong class="cart-total-title">Total:</strong>
       <span class="cart-total-price">0$</span>
+=======
+      </div>
+
+      <div class="cart-total">
+      <strong class="cart-total-title">Total:</strong>
+      <span class="cart-total-price">87$</span>
+>>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
       </div>
     
     

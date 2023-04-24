@@ -32,7 +32,11 @@ public class AddProduct extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+<<<<<<< HEAD
         doPost(request, response);
+=======
+                doPost(request, response);
+>>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
 
     }
 
