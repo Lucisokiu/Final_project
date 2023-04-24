@@ -144,69 +144,12 @@
                 </div>
                 <div class="cart-items">
 
-<<<<<<< HEAD
-                  <!-- <c:forEach items="${ListP1}" var = "o">
-
-                  <div class="cart-row">
-                          <div class="cart-item cart-column">
-                                  <img class="cart-item-image" src="${o.productImg_path}" width="100" height="100">
-                                  <span class="cart-item-title">${o.product_name}</span>
-                          </div>  
-
-                          <span class="cart-price cart-column">${o.price}</span>
-
-                          <div class="cart-quantity cart-column">
-                                <input class="cart-quantity-input" type="number" value="0">
-                                <button class="modal-btn btn-danger" type="button">Delete</button>
-                          </div>
-
-                        </div>
-                  </c:forEach>
-
-
-                  <c:forEach items="${ListP2}" var = "o">
-
-                  <div class="cart-row">
-                          <div class="cart-item cart-column">
-                                  <img class="cart-item-image" src="${o.productImg_path}" width="100" height="100">
-                                  <span class="cart-item-title">${o.product_name}</span>
-                          </div>
-
-                          <span class="cart-price cart-column">${o.price}</span>
-
-                          <div class="cart-quantity cart-column">
-                                <input class="cart-quantity-input" type="number" value="0">
-                                <button class="modal-btn btn-danger" type="button">Delete</button>
-                          </div>
-
-                        </div>
-                  </c:forEach>
-
-                  <c:forEach items="${ListP3}" var = "o">
-
-                          <div class="cart-row">
-                                  <div class="cart-item cart-column">
-                                          <img class="cart-item-image" src="${o.productImg_path}" width="100" height="100">
-                                          <span class="cart-item-title">${o.product_name}</span>
-                                  </div>
-
-                                  <span class="cart-price cart-column">${o.price}</span>
-
-                                  <div class="cart-quantity cart-column">
-                                        <input class="cart-quantity-input" type="number" value="0">
-                                        <button class="modal-btn btn-danger" type="button">Delete</button>
-                                  </div>
-
-                                </div>
-                          </c:forEach> -->
-=======
->>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
 
               </div>
 
               <div  id= "totalPrice" class="cart-total">
                 <strong class="cart-total-title">Total:</strong>
-                <span class="cart-total-price">0</span>
+                <span class="cart-total-price"></span>
               </div>
           
           
@@ -245,9 +188,6 @@
         <div class="row">
           <div class="col-md-6">
             <div id="slider" class="owl-carousel product-slider">
-          <!-- <div class="item">
-              <img src="images/bread-5.png" />
-          </div> -->
 
           <div class="item">
               <img class="main_img" src="${detail.productImg_path}" />
@@ -261,19 +201,6 @@
           
         </div>
         <div id="thumb" class="owl-carousel product-thumb">
-          <!-- <div class="item">
-              <img src="images/bread-5.png" />
-          </div> -->
-          <!-- <div class="item">
-              <img src="images/bread-5-detail1.jpg" />
-          </div>
-          <div class="item">
-              <img src="images/bread-5-detail2.jpg" />
-          </div>
-          <div class="item">
-              <img src="images/bread-5-detail3.jpg" />
-          </div> -->
-          
         </div>
           </div>
           <div class="col-md-6">
@@ -312,8 +239,8 @@
                 <div class="product-card">
                     <a  href="detail?pid=${o.product_id}" data-abc="true"><img class="product-thumb" src="${o.productImg_path}" alt="Product"></a>
                     <h3 class="product-title"><a href="detail?pid=${o.product_id}" data-abc="true">${o.product_name}</a></h3>
-                    <p class= "price-title">Sale: <del style="margin-left: 5px;">${o.sale_price}</del></p> 
-                    <h4 class="product-price">${o.price} $</h4>
+                    <p class= "price-title"> <del style="margin-left: 5px;">${o.price}</del></p>
+                    <h4 class="product-price">Sale:  ${o.sale_price} $</h4>
                     <div class="product-buttons"><button class="btn btn-outline-primary btn-sm" data-toast="" data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</button> </div>
                 </div>
               </c:forEach>
@@ -323,8 +250,8 @@
                 <div class="product-card">
                     <a  href="detail?pid=${o.product_id}" data-abc="true"><img class="product-thumb" src="${o.productImg_path}" alt="Product"></a>
                     <h3 class="product-title"><a href="detail?pid=${o.product_id}" data-abc="true">${o.product_name}</a></h3>
-                    <p class= "price-title">Sale: <del style="margin-left: 5px;">${o.sale_price}</del></p> 
-                    <h4 class="product-price">${o.price} $</h4>
+                    <p class= "price-title"> <del style="margin-left: 5px;">${o.price}</del></p> 
+                    <h4 class="product-price">Sale: ${o.sale_price} $</h4>
                     <div class="product-buttons"><button class="btn btn-outline-primary btn-sm" data-toast="" data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</button> </div>
                 </div>
               </c:forEach>
@@ -334,8 +261,9 @@
                 <div class="product-card">
                     <a  href="detail?pid=${o.product_id}" data-abc="true"><img class="product-thumb" src="${o.productImg_path}" alt="Product"></a>
                     <h3 class="product-title"><a href="detail?pid=${o.product_id}" data-abc="true">${o.product_name}</a></h3>
-                    <p class= "price-title">Sale: <del style="margin-left: 5px;">${o.sale_price}</del></p> 
-                    <h4 class="product-price">${o.price} $</h4>
+                    <p class= "price-title"> <del style="margin-left: 5px;">${o.price}</del></p> 
+                    <h4 class="product-price">Sale:  ${o.sale_price} $</h4>
+
                     <div class="product-buttons"><button class="btn btn-outline-primary btn-sm" data-toast="" data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</button> </div>
                 </div>
               </c:forEach>
