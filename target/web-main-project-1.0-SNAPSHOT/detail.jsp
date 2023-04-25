@@ -239,8 +239,8 @@
                 <div class="product-card">
                     <a  href="detail?pid=${o.product_id}" data-abc="true"><img class="product-thumb" src="${o.productImg_path}" alt="Product"></a>
                     <h3 class="product-title"><a href="detail?pid=${o.product_id}" data-abc="true">${o.product_name}</a></h3>
-                    <h4 class="product-price">${o.sale_price} $</h4>
-                    <p class= "price-title">Sale: <del style="margin-left: 5px;">${o.price}</del></p> 
+                    <p class= "price-title"> <del style="margin-left: 5px;">${o.price}</del></p>
+                    <h4 class="product-price">Sale:  ${o.sale_price} $</h4>
                     <div class="product-buttons"><button class="btn btn-outline-primary btn-sm" data-toast="" data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</button> </div>
                 </div>
               </c:forEach>
@@ -250,8 +250,8 @@
                 <div class="product-card">
                     <a  href="detail?pid=${o.product_id}" data-abc="true"><img class="product-thumb" src="${o.productImg_path}" alt="Product"></a>
                     <h3 class="product-title"><a href="detail?pid=${o.product_id}" data-abc="true">${o.product_name}</a></h3>
-                    <h4 class="product-price">${o.sale_price} $</h4>
-                    <p class= "price-title">Sale: <del style="margin-left: 5px;">${o.price}</del></p> 
+                    <p class= "price-title"> <del style="margin-left: 5px;">${o.price}</del></p> 
+                    <h4 class="product-price">Sale: ${o.sale_price} $</h4>
                     <div class="product-buttons"><button class="btn btn-outline-primary btn-sm" data-toast="" data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</button> </div>
                 </div>
               </c:forEach>
@@ -261,8 +261,9 @@
                 <div class="product-card">
                     <a  href="detail?pid=${o.product_id}" data-abc="true"><img class="product-thumb" src="${o.productImg_path}" alt="Product"></a>
                     <h3 class="product-title"><a href="detail?pid=${o.product_id}" data-abc="true">${o.product_name}</a></h3>
-                    <h4 class="product-price">${o.sale_price} $</h4>
-                    <p class= "price-title">Sale: <del style="margin-left: 5px;">${o.price}</del></p> 
+                    <p class= "price-title"> <del style="margin-left: 5px;">${o.price}</del></p> 
+                    <h4 class="product-price">Sale:  ${o.sale_price} $</h4>
+
                     <div class="product-buttons"><button class="btn btn-outline-primary btn-sm" data-toast="" data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</button> </div>
                 </div>
               </c:forEach>
