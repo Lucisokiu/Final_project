@@ -41,9 +41,12 @@ public class SignUpControl extends HttpServlet {
         }
         else{
             DAO dao = new DAO();
+            // khởi tạo singleton
             AccountSingleton accountsingleton = new AccountSingleton();
+
+            // Singleton patterm
             Account acc = accountsingleton.checkAccountExist(user);
-            
+            // Singleton patterm
             Account accountexist = dao.checkAccountExistbyEmail(email);
             
             if (acc == null){

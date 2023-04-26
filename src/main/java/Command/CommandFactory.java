@@ -1,7 +1,7 @@
 package Command;
 
 
-
+// khởi tạo các đối tượng command
 public class CommandFactory {
     public InterfaceCommand createCommand(String action) {
         switch(action) {

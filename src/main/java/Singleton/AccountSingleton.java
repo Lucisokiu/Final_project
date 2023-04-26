@@ -33,6 +33,8 @@ public final class AccountSingleton {
     ResultSet rs = null;
     
     public Account checkAccountExist(String user){
+
+
         String query = "select * from account\n"
                 + "where userName = ?";
 
@@ -55,6 +57,14 @@ public final class AccountSingleton {
             }
         } catch (Exception e) {
         }
+        return null;
+    }
+
+
+    public Account checkLogiAccount(Account user){
+
+        // kiểm tra đã đăng nhập trước đó chưa
+        // bảo đảm chỉ 1 tài khoản được đăng nhập trong 1 phiên
         return null;
     }
 }
