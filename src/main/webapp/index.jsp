@@ -146,8 +146,9 @@
 
 
                             <div class="cart-items">
+                                <div class="cart-row">
 
-
+                                </div>
                             </div>
 
                             <div class="cart-total">
@@ -167,7 +168,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
     </nav>
     <!-- END nav -->
 
