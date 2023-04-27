@@ -6,10 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Shoes.dao.DAO;
 
 public interface InterfaceCommand {
-    void execute(HttpServletRequest request, HttpServletResponse response, DAO dao) throws ServletException, IOException;
+    void execute(HttpServletRequest request, HttpServletResponse response,int account_id,int product_id,int quantity) throws ServletException, IOException;
 }
 
 
