@@ -24,7 +24,31 @@ public class Product {
     private int enable;
 
     private String productImg_path;
-    
+
+    private int quantity;
+    // có thểm quantity dùng cho cart
+    public Product(int product_id, String product_name, int category_id, String description, double price,
+            double sale_price, int enable, String productImg_path, int quantity) {
+        this.product_id = product_id;
+        this.product_name = product_name;
+        this.category_id = category_id;
+        this.description = description;
+        this.price = price;
+        this.sale_price = sale_price;
+        this.enable = enable;
+        this.productImg_path = productImg_path;
+        this.quantity = quantity;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+    // không có quantity dùng dùng bình thường
+
     public Product(int product_id, String product_name, int category_id, String description, double price, double sale_price, int enable, String productImg_path) {
         this.product_id = product_id;
         this.product_name = product_name;

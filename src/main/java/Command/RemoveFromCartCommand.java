@@ -15,6 +15,6 @@ public class RemoveFromCartCommand implements InterfaceCommand{
         // xử lý hành vi remove cart
         DAO dao = new DAO();
         dao.deleteCart(account_id,product_id,quantity);
-        // response.sendRedirect("cart.jsp");
+        response.sendRedirect("init");
     }
 }

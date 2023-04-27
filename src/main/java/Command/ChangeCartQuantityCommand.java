@@ -19,6 +19,6 @@ public class ChangeCartQuantityCommand implements InterfaceCommand{
         DAO dao = new DAO();
         dao.changeCart(account_id,product_id,quantity);
        
-        // response.sendRedirect("cart.jsp");
+        response.sendRedirect("init");
     }
 }

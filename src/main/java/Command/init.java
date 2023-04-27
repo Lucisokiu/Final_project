@@ -1,6 +1,8 @@
 package Command;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -13,6 +15,7 @@ import Shoes.dao.DAO;
 import Shoes.entity.Account;
 import Shoes.entity.Product;
 
+@WebServlet(name = "init", urlPatterns = {"/initcard"})
 public class init extends HttpServlet {
 
     // Khởi tạo DAO và CommandFactory
@@ -50,9 +53,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
     // Tạo đối tượng Command tương ứng
     InterfaceCommand command = commandFactory.createCommand(action);
     if (command != null) {
-
         // Thực hiện yêu cầu
-
         command.execute(request, response,account_id,product_id,quantity);
     } else {
         // Yêu cầu không hợp lệ

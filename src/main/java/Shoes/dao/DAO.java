@@ -361,7 +361,7 @@ public class DAO {
     public  List<Product> getCart(int account_id){
         List<Product> listcart = new ArrayList<>();
 
-        String query = "SELECT p.* \n" +
+        String query = "SELECT p.*, c.quantity \n" +
                         "FROM cart c \n" +
                         "JOIN product p ON c.product_id = p.product_id \n" + 
                         "WHERE c.account_id = ?";
@@ -379,8 +379,10 @@ public class DAO {
                 rs.getDouble(5),
                 rs.getDouble(6),
                 rs.getInt(7),
-                rs.getString(8)));
+                rs.getString(8),
+                rs.getInt(9)));
             }
+
         } catch (Exception e) {
             System.out.println("Get cart was failed: " + e);
         }

@@ -15,7 +15,7 @@ public class AddToCartCommand implements InterfaceCommand{
         dao.addCart(account_id,product_id,quantity);
 
         
-        // response.sendRedirect("detail.jsp");
+        response.sendRedirect("init");
     }
     
 
