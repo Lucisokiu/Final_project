@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Builder.ProductBuilder;
 import Shoes.dao.DAO;
 import Shoes.entity.Account;
-import Shoes.entity.Product;
 
 @WebServlet(name = "init", urlPatterns = {"/initcard"})
 public class init extends HttpServlet {
@@ -29,7 +29,19 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
     HttpSession session = request.getSession();
     Account a = (Account) session.getAttribute("acc");
     DAO dao = new DAO();
-    List<Product> listCart = dao.getCart(a.getAccountId());
+    List<ProductBuilder> listCart = dao.getCart(a.getAccountId());
+
+    // List<ProductBuilder> productBuilders = new ArrayList<>();
+
+    // for (Product product : listCart) {
+    //     ProductBuilder productcart = new ProductBuilder.Builder()
+    //     .setProductId(product.getProduct_id())
+    //     .build();
+
+    //     productBuilders.add(productcart);
+
+    // }
+
 
     request.setAttribute("listCart", listCart);
 

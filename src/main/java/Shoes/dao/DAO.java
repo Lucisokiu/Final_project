@@ -15,6 +15,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import Builder.ProductBuilder;
+
 /**
  *
  * @author ADMIN
@@ -355,8 +357,8 @@ public class DAO {
         }
     }
    
-    public  List<Product> getCart(int account_id){
-        List<Product> listcart = new ArrayList<>();
+    public  List<ProductBuilder> getCart(int account_id){
+        List<ProductBuilder> listcart = new ArrayList<>();
 
         String query = "SELECT p.*, c.quantity \n" +
                         "FROM cart c \n" +
@@ -369,15 +371,29 @@ public class DAO {
             ps.setInt(1, account_id);
             ps.executeQuery();
             while(rs.next()){
-                listcart.add(new Product(rs.getInt(1),
-                rs.getString(2),
-                rs.getInt(3),
-                rs.getString(4),
-                rs.getDouble(5),
-                rs.getDouble(6),
-                rs.getInt(7),
-                rs.getString(8),
-                rs.getInt(9)));
+                ProductBuilder productBuilder = new ProductBuilder.Builder()
+                .setProductId(rs.getInt(1))
+                .setProductName(rs.getString(2))
+                .setCategoryId(rs.getInt(3))
+                .setDescription(rs.getString(4))
+                .setPrice(rs.getDouble(5))
+                .setSalePrice(rs.getDouble(6))
+                .setEnable(rs.getInt(7))
+                .setProductImgPath(rs.getString(8))
+                .setQuantity(rs.getInt(9))
+                .build();
+
+                listcart.add(productBuilder);
+
+                // listcart.add(new ProductBuilder(rs.getInt(1),
+                // rs.getString(2),
+                // rs.getInt(3),
+                // rs.getString(4),
+                // rs.getDouble(5),
+                // rs.getDouble(6),
+                // rs.getInt(7),
+                // rs.getString(8),
+                // rs.getInt(9)));
             }
 
         } catch (Exception e) {
@@ -402,6 +418,7 @@ public class DAO {
         } catch (Exception e) {
             System.out.println("Add cart was failed: " + e);
         }
+        
     }
     
     public  void deleteCart(int account_id, int product_id,int quantity){
