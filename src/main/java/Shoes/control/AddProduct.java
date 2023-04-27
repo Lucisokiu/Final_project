@@ -5,7 +5,6 @@
 package Shoes.control;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,11 +21,11 @@ public class AddProduct extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String pname = request.getParameter("name");
-        String pimage = request.getParameter("image");
-        String pprice = request.getParameter("price");
-        String pdescription = request.getParameter("description");
-        String pcategory = request.getParameter("category");
+        // String pname = request.getParameter("name");
+        // String pimage = request.getParameter("image");
+        // String pprice = request.getParameter("price");
+        // String pdescription = request.getParameter("description");
+        // String pcategory = request.getParameter("category");
         
     }
 

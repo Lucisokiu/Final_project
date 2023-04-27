@@ -2,9 +2,7 @@
 package Shoes.control;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
-import javax.mail.MessagingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,7 +13,6 @@ import Shoes.dao.DAO;
 import Shoes.entity.Category;
 import Shoes.entity.Product;
 import Shoes.entity.Account;
-import Shoes.util.MailUtilLocal;
 
 /**
  *
@@ -27,8 +24,8 @@ public class MainControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url= "/index.jsp";
         String action = request.getParameter("action");
-        String user = request.getParameter("user");
-        String email = request.getParameter("email");
+        // String user = request.getParameter("user");
+        // String email = request.getParameter("email");
         
         DAO dao = new DAO();
         List<Account> listA = dao.getAllUser();

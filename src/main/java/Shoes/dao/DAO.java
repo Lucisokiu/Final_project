@@ -4,11 +4,8 @@
  */
 package Shoes.dao;
 
-import Factory.CategoryFactory;
-import Factory.CategoryType;
 import Shoes.context.DBContext;
 import Shoes.entity.Account;
-import Shoes.entity.Cart;
 import Shoes.entity.Category;
 import Shoes.entity.Product;
 
@@ -444,23 +441,23 @@ public class DAO {
 
     
     public static void main(String[] args) {
-        DAO dao = new DAO();
+        // DAO dao = new DAO();
 
-        List<Product> list = dao.getAllProducts();
+        // List<Product> list = dao.getAllProducts();
         
-        Factory.Category nike = CategoryFactory.getCategory(CategoryType.NIKE);
+        // Factory.Category nike = CategoryFactory.getCategory(CategoryType.NIKE);
 
-        List<Product> listP1 = dao.getProductByCate1(String.valueOf(nike.getCategoryID()));
+        // List<Product> listP1 = dao.getProductByCate1(String.valueOf(nike.getCategoryID()));
         
-        Factory.Category adidas = CategoryFactory.getCategory(CategoryType.ADIDAS);
+        // Factory.Category adidas = CategoryFactory.getCategory(CategoryType.ADIDAS);
 
-        List<Product> listP2 = dao.getProductByCate2(String.valueOf(adidas.getCategoryID()));
+        // List<Product> listP2 = dao.getProductByCate2(String.valueOf(adidas.getCategoryID()));
         
-        Factory.Category converse = CategoryFactory.getCategory(CategoryType.CONVERSE);
+        // Factory.Category converse = CategoryFactory.getCategory(CategoryType.CONVERSE);
 
-        List<Product> listP3 = dao.getProductByCate3(String.valueOf(converse.getCategoryID()));
+        // List<Product> listP3 = dao.getProductByCate3(String.valueOf(converse.getCategoryID()));
         
-        List<Category> listC = dao.getAllCategory();
+        // List<Category> listC = dao.getAllCategory();
 
         // for (Category o : listC) {
         //     System.out.println(o);

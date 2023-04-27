@@ -30,8 +30,8 @@ public class SubscribeMail extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = "/index.jsp";
         
-        String user = request.getParameter("user");
-        String email = request.getParameter("email");
+        // String user = request.getParameter("user");
+        // String email = request.getParameter("email");
         
         DAO dao = new DAO();
         List<Product> list = dao.getAllProducts();
