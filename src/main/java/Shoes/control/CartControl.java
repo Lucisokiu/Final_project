@@ -21,8 +21,8 @@ import Shoes.util.MailUtilLocal;
 public class CartControl extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        String id = request.getParameter("pid");
+        // HttpSession session = request.getSession();
+        // String id = request.getParameter("pid");
     }
 
     @Override

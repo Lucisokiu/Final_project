@@ -63,8 +63,10 @@ public final class AccountSingleton {
 
     public Account checkLogiAccount(Account user){
 
-        // kiểm tra đã đăng nhập trước đó chưa
-        // bảo đảm chỉ 1 tài khoản được đăng nhập trong 1 phiên
+        if(user == null)
         return null;
+        else{
+            return user;
+        }
     }
 }
