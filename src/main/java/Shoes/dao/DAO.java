@@ -360,7 +360,7 @@ public class DAO {
     public  List<ProductBuilder> getCart(int account_id){
         List<ProductBuilder> listcart = new ArrayList<>();
 
-        String query = "SELECT p.*, c.quantity \n" +
+        String query = "SELECT p.product_id,p.product_name,p.category_id,p.description,p.price,p.sale_price,p.enable,p.productImg_path, c.quantity        \n" +
                         "FROM cart c \n" +
                         "JOIN product p ON c.product_id = p.product_id \n" + 
                         "WHERE c.account_id = ?";
