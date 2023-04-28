@@ -4,8 +4,6 @@
  */
 package Shoes.dao;
 
-import Factory.CategoryFactory;
-import Factory.CategoryType;
 import Shoes.context.DBContext;
 import Shoes.entity.Account;
 import Shoes.entity.Category;
@@ -16,6 +14,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+
+import Builder.ProductBuilder;
 
 /**
  *
@@ -357,27 +357,128 @@ public class DAO {
         }
     }
    
+    public  List<ProductBuilder> getCart(int account_id){
+        List<ProductBuilder> listcart = new ArrayList<>();
+
+        String query = "SELECT p.*, c.quantity \n" +
+                        "FROM cart c \n" +
+                        "JOIN product p ON c.product_id = p.product_id \n" + 
+                        "WHERE c.account_id = ?";
+        
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, account_id);
+            ps.executeQuery();
+            while(rs.next()){
+                ProductBuilder productBuilder = new ProductBuilder.Builder()
+                .setProductId(rs.getInt(1))
+                .setProductName(rs.getString(2))
+                .setCategoryId(rs.getInt(3))
+                .setDescription(rs.getString(4))
+                .setPrice(rs.getDouble(5))
+                .setSalePrice(rs.getDouble(6))
+                .setEnable(rs.getInt(7))
+                .setProductImgPath(rs.getString(8))
+                .setQuantity(rs.getInt(9))
+                .build();
+
+                listcart.add(productBuilder);
+
+                // listcart.add(new ProductBuilder(rs.getInt(1),
+                // rs.getString(2),
+                // rs.getInt(3),
+                // rs.getString(4),
+                // rs.getDouble(5),
+                // rs.getDouble(6),
+                // rs.getInt(7),
+                // rs.getString(8),
+                // rs.getInt(9)));
+            }
+
+        } catch (Exception e) {
+            System.out.println("Get cart was failed: " + e);
+        }
+        return listcart;
+
+    }
+
+    public  void addCart(int account_id, int product_id,int quantity){
+
+        String query = "insert into cart(product_id, quantity, account_id, ordered)\n"
+                + "values(?,?,?,0)";
+        
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, product_id);
+            ps.setInt(2, quantity);
+            ps.setInt(3, account_id);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Add cart was failed: " + e);
+        }
+        
+    }
     
-    
+    public  void deleteCart(int account_id, int product_id,int quantity){
+
+        String query = "DELETE FROM cart WHERE product_id = ?";
+
+        
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, product_id);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Delete cart was failed: " + e);
+        }
+    }
+
+    public  void changeCart(int account_id, int product_id,int quantity){
+
+        String query = "update cart\n" +
+                        "set quantity  = ?\n" +
+                        "where product_id = ? AND account_id =?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, quantity);
+            ps.setInt(2, product_id);
+            ps.setInt(3, account_id);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Delete product was failed: " + e);
+        }   
+
+    }
+
+
+
     
     public static void main(String[] args) {
-        DAO dao = new DAO();
+        // DAO dao = new DAO();
 
-        List<Product> list = dao.getAllProducts();
+        // List<Product> list = dao.getAllProducts();
         
-        Factory.Category nike = CategoryFactory.getCategory(CategoryType.NIKE);
-        List<Product> listP1 = dao.getProductByCate1(String.valueOf(nike.getCategoryID()));
+        // Factory.Category nike = CategoryFactory.getCategory(CategoryType.NIKE);
+
+        // List<Product> listP1 = dao.getProductByCate1(String.valueOf(nike.getCategoryID()));
         
-        Factory.Category adidas = CategoryFactory.getCategory(CategoryType.ADIDAS);
-        List<Product> listP2 = dao.getProductByCate2(String.valueOf(adidas.getCategoryID()));
+        // Factory.Category adidas = CategoryFactory.getCategory(CategoryType.ADIDAS);
+
+        // List<Product> listP2 = dao.getProductByCate2(String.valueOf(adidas.getCategoryID()));
         
-        Factory.Category converse = CategoryFactory.getCategory(CategoryType.CONVERSE);
-        List<Product> listP3 = dao.getProductByCate3(String.valueOf(converse.getCategoryID()));
+        // Factory.Category converse = CategoryFactory.getCategory(CategoryType.CONVERSE);
+
+        // List<Product> listP3 = dao.getProductByCate3(String.valueOf(converse.getCategoryID()));
         
-        List<Category> listC = dao.getAllCategory();
+        // List<Category> listC = dao.getAllCategory();
 
         // for (Category o : listC) {
         //     System.out.println(o);
-        // }               
+        // }
+
     }
 }

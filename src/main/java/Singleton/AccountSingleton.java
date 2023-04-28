@@ -33,6 +33,8 @@ public final class AccountSingleton {
     ResultSet rs = null;
     
     public Account checkAccountExist(String user){
+
+
         String query = "select * from account\n"
                 + "where userName = ?";
 
@@ -56,5 +58,15 @@ public final class AccountSingleton {
         } catch (Exception e) {
         }
         return null;
+    }
+
+
+    public Account checkLogiAccount(Account user){
+
+        if(user == null)
+        return null;
+        else{
+            return user;
+        }
     }
 }

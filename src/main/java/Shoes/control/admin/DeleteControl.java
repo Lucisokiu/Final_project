@@ -5,20 +5,13 @@
 package Shoes.control.admin;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
-import javax.mail.MessagingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import Shoes.control.ManagerProductControl;
 import Shoes.dao.DAO;
-import Shoes.entity.Account;
-import Shoes.util.MailUtilLocal;
 
 /**
  *
@@ -40,10 +33,10 @@ public class DeleteControl extends HttpServlet {
         
         response.sendRedirect("ManagerProductControl");
         
-        String from = "nguyenminhnhut435@gmail.com";
-        String subject = "Welcome to our Happy Shoes Shop";
+        // String from = "nguyenminhnhut435@gmail.com";
+        // String subject = "Welcome to our Happy Shoes Shop";
         
-        List<Account> listA = dao.getAllUser();
+        // List<Account> listA = dao.getAllUser();
     }
 
     @Override
