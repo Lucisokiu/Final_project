@@ -1,7 +1,6 @@
 package Shoes.control;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import Shoes.dao.DAO;
 import Shoes.entity.Account;
+import Singleton.AccountSingleton;
 
 /**
  *
@@ -28,13 +28,19 @@ public class LoginControl extends HttpServlet {
 
         DAO dao = new DAO();
         Account a = dao.login(username, password);
+        AccountSingleton accountsingleton = new AccountSingleton();
+
         if(a == null){
             request.setAttribute("mess", "Wrong username or password");
             request.getRequestDispatcher("signIn-signUp.jsp").forward(request, response);
         }
         else{
+            
+           Account acc = (Account) session.getAttribute("acc");
+           Account accExist = accountsingleton.checkLogiAccount(acc);
+            if ( accExist == null )
+            {
            session.setAttribute("acc", a);
-           
            session.setAttribute("userid", a.getAccountId());
            session.setAttribute("username", a.getUserName());
            session.setAttribute("pass", a.getPassword());
@@ -44,6 +50,11 @@ public class LoginControl extends HttpServlet {
            session.setAttribute("address", a.getAddress());
            
            request.getRequestDispatcher("index.jsp").forward(request, response);
+            }
+            else{
+                request.setAttribute("mess", "Accounts are logged in the other");
+                request.getRequestDispatcher("signIn-signUp.jsp").forward(request, response);
+            }
         }
     }
 

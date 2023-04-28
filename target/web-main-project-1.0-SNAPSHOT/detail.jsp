@@ -128,8 +128,9 @@
         </c:if>
 
             
-          
-            <div id="myModal" class="modal">
+        <form id="myModal" class="modal" method="post" action="/initcard">
+
+          <!-- <div id="myModal" class="modal"> -->
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title">Cart</h5>
@@ -142,13 +143,40 @@
                   <span class="cart-price cart-header cart-column">Price</span>
                   <span class="cart-quantity cart-header cart-column">Quantity</span>
                 </div>
-                <div class="cart-items">
 
+                <div class="cart-items">
+                  <c:forEach items="${listCart}" var = "o">
+
+                  <div class="cart-row">
+                          <div class="cart-item cart-column">
+                                  <img class="cart-item-image" src="${o.productImg_path}" width="100" height="100">
+                                  <span class="cart-item-title">${o.product_name}</span>
+                          </div>  
+
+                          <span class="cart-price cart-column">${o.price}</span>
+
+                          <div class="cart-quantity cart-column">
+                                <input class="cart-quantity-input" type="number" value="${o.quantity}">
+                                <button class="modal-btn btn-danger" type="button">Delete</button>
+                          </div>
+
+                        </div>
+                  </c:forEach>
 
               </div>
 
               <div  id= "totalPrice" class="cart-total">
-                <strong class="cart-total-title">Total:</strong>
+
+                <c:set var="total" value="0" />
+                <c:forEach var="o" items="${list}">
+                  <c:set var="subtotal" value="${o.quantity * o.price}" />
+                  <c:set var="total" value="${total + subtotal}" />
+                </c:forEach>
+
+                <strong class="cart-total-title">Total: ${total}</strong>
+
+                
+                
                 <span class="cart-total-price"></span>
               </div>
           
@@ -167,7 +195,10 @@
             </div>
          
           
-        </div>
+          <!-- </div> -->
+        </form>
+
+
       </nav>
       <!-- END nav -->
       <section class="hero-wrap hero-wrap-2" style="background-image: url('images/img/img-size-l/slide-img1.jpg');" data-stellar-background-ratio="0.5">
@@ -202,33 +233,47 @@
         </div>
         <div id="thumb" class="owl-carousel product-thumb">
         </div>
-          </div>
+      </div>
           <div class="col-md-6">
             <div class="product-dtl">
               <div class="product-info">
                 <div class="product-name">${detail.product_name}</div>
                 <div class="reviews-counter">
-                <span>${detail.enable}</span>
+                  <c:if test="${detail.enable == 1}">
+                    <span>còn hàng</span>
+                  </c:if>
+                  <c:if test="${detail.enable != 1}">
+                    <span>hết hàng</span>
+                  </c:if>
                 </div>
-                <div class="product-price-discount"><span class="product-price">${detail.price} $</span><span class="line-through">${detail.sale_price} $</span></div>
+                <div class="product-price-discount"><span class="product-price">${detail.price} $</span></div>
               </div>
               <p>${detail.description}</p>
               
               <div class="product-count">
                 <label for="size">Quantity</label>
-                <form action="#" class="display-flex">
+                <form action="/initcard?action=add" class="display-flex">
                 <div class="qtyminus">-</div>
                 <input type="text" name="quantity" value="1" class="qty" id = "count_product">
                 <div class="qtyplus">+</div>
+                <input type="hidden" name="product_id" value="${detail.product_id}">
                 </form>
-                <button class="round-black-btn">Add to Cart</button>
+                <button onclick="submitForm()" class="round-black-btn">Add to Cart</button>
                 <button class="round-black-btn goCart-btn">Buy Now</button>
+
               </div>
             </div>
           </div>
         </div>
       </div>
-        
+<script>
+  function submitForm() {
+  document.forms[0].submit();
+  }
+</script>
+
+
+
 
   <div class="related-container">
     <!-- <h5 class="related-heading" style="padding-bottom: 15px; padding-left:42%;">Other Delicious Items:</h5> -->
@@ -239,8 +284,8 @@
                 <div class="product-card">
                     <a  href="detail?pid=${o.product_id}" data-abc="true"><img class="product-thumb" src="${o.productImg_path}" alt="Product"></a>
                     <h3 class="product-title"><a href="detail?pid=${o.product_id}" data-abc="true">${o.product_name}</a></h3>
-                    <p class= "price-title"> <del style="margin-left: 5px;">${o.price}</del></p>
-                    <h4 class="product-price">Sale:  ${o.sale_price} $</h4>
+                    <p class= "price-title">Sale: <del style="margin-left: 5px;"></del></p> 
+                    <h4 class="product-price">      ${o.price} $</h4>
                     <div class="product-buttons"><button class="btn btn-outline-primary btn-sm" data-toast="" data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</button> </div>
                 </div>
               </c:forEach>
@@ -250,8 +295,8 @@
                 <div class="product-card">
                     <a  href="detail?pid=${o.product_id}" data-abc="true"><img class="product-thumb" src="${o.productImg_path}" alt="Product"></a>
                     <h3 class="product-title"><a href="detail?pid=${o.product_id}" data-abc="true">${o.product_name}</a></h3>
-                    <p class= "price-title"> <del style="margin-left: 5px;">${o.price}</del></p> 
-                    <h4 class="product-price">Sale: ${o.sale_price} $</h4>
+                    <p class= "price-title">Sale: <del style="margin-left: 5px;"></del></p> 
+                    <h4 class="product-price">      ${o.price} $</h4>
                     <div class="product-buttons"><button class="btn btn-outline-primary btn-sm" data-toast="" data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</button> </div>
                 </div>
               </c:forEach>
@@ -261,9 +306,8 @@
                 <div class="product-card">
                     <a  href="detail?pid=${o.product_id}" data-abc="true"><img class="product-thumb" src="${o.productImg_path}" alt="Product"></a>
                     <h3 class="product-title"><a href="detail?pid=${o.product_id}" data-abc="true">${o.product_name}</a></h3>
-                    <p class= "price-title"> <del style="margin-left: 5px;">${o.price}</del></p> 
-                    <h4 class="product-price">Sale:  ${o.sale_price} $</h4>
-
+                    <p class= "price-title">Sale: <del style="margin-left: 20px;"> </del></p> 
+                    <h4 class="product-price">      ${o.price} $</h4>
                     <div class="product-buttons"><button class="btn btn-outline-primary btn-sm" data-toast="" data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</button> </div>
                 </div>
               </c:forEach>

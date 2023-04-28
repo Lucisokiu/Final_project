@@ -2,20 +2,20 @@
 package Shoes.control;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
-import javax.mail.MessagingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Interpreter.Context;
 import Shoes.dao.DAO;
 import Shoes.entity.Category;
 import Shoes.entity.Product;
 import Shoes.entity.Account;
-import Shoes.util.MailUtilLocal;
+
+import static Interpreter.ClientInterpreter.checkInterpreter;
 
 /**
  *
@@ -27,8 +27,8 @@ public class MainControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url= "/index.jsp";
         String action = request.getParameter("action");
-        String user = request.getParameter("user");
-        String email = request.getParameter("email");
+        // String user = request.getParameter("user");
+        // String email = request.getParameter("email");
         
         DAO dao = new DAO();
         List<Account> listA = dao.getAllUser();
@@ -68,9 +68,14 @@ public class MainControl extends HttpServlet {
         }
         else if(action.equals("login")){
             url = "/signIn-signUp.jsp";
+        }else if(action.equals("Interpreter")){
+            String acModel = request.getParameter("acModel");
+            Context context = new Context(acModel);
+            String notice=new String();
+            notice = checkInterpreter(context);
+            request.setAttribute("notice",notice);
+            url = "/index.jsp";
         }
-        
-        System.out.println("Action:" + action);
         getServletContext().getRequestDispatcher(url).forward(request, response);
     }
 

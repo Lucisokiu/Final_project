@@ -6,7 +6,7 @@ package template;
 
 /**
  *
- * @author khanh
+ * @author Nhut
  */
 public class TemplateMethodPattern {
  
