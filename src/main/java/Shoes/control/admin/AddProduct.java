@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package Shoes.control;
+package Shoes.control.admin;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -27,7 +27,6 @@ public class AddProduct extends HttpServlet {
         String pprice = request.getParameter("price");
         String pdescription = request.getParameter("description");
         String pcategory = request.getParameter("category");
-        
     }
 
     @Override
