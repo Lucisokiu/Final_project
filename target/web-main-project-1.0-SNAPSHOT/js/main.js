@@ -359,12 +359,8 @@ btn_goCart.onclick = function () {
 function updatecart() {
 	var cart_item = document.getElementsByClassName("cart-items")[0];
 	var cart_rows = cart_item.getElementsByClassName("cart-row");
-<<<<<<< HEAD
 	var cart_total = document.getElementsByClassName("cart-total")[0];
 	var total = cart_total.getElementsByClassName("cart-total-price");
-=======
-	var total = 0;
->>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
 	for (var i = 0; i < cart_rows.length; i++) {
 	  var cart_row = cart_rows[i];
 	  var price_item = cart_row.getElementsByClassName("cart-price ")[0];
@@ -446,11 +442,7 @@ function addItemToCart(title, price, img, sl) {
   cartRow.classList.add('cart-row');
   var cartItems = document.getElementsByClassName('cart-items')[0];				
   var cart_title = cartItems.getElementsByClassName('cart-item-title');
-<<<<<<< HEAD
   //Nếu title của sản phẩm bằng với title mà bạn thêm vao giỏ hàng thì sẽ thông báo cho user.
-=======
-  //Nếu title của sản phẩm bằng với title mà bạn thêm vao giỏ hàng thì sẽ thông cho user.
->>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
   for (var i = 0; i < cart_title.length; i++) {
     if (cart_title[i].innerText === title) {
       alert('This product is already in the cart!');

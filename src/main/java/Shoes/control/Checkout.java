@@ -29,9 +29,6 @@ public class Checkout extends HttpServlet {
         // request.setAttribute("product", p);
         request.setAttribute("ListA", listA);
         request.getRequestDispatcher("checkout.jsp").forward(request, response);
-        
-     
-       
     }
 
     @Override

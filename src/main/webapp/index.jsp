@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="css/animate.css">
 
@@ -78,6 +78,16 @@
                 
                 <c:if test="${sessionScope.acc.isAdmin != 1}">
                     <div class="collapse navbar-collapse" id="ftco-nav">
+                        <c:if test="${not empty notice}">
+                            <script>
+                                alert("${notice}");
+                            </script>
+                        </c:if>
+
+                        <form action="<c:url value="/MainControl?action=Interpreter"/>" method="post">
+                            <label for="search-input">kiểm tra:</label>
+                            <input  type="text" id="search-input" name="acModel" placeholder="nhập code">
+                        </form>
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item active"><a href="MainControl?action=home" class="nav-link">Home</a></li>
                             <li class="nav-item"><a href="MainControl?action=about" class="nav-link">About</a></li>
@@ -111,6 +121,7 @@
                         <div class="right-content">
                                 <a href="/signIn-signUp.jsp" class="avatar">
                                 <img src="images/img/icon-img/turn.png" alt="" class="avatar-img">
+                                </a>
                         </div>
                     </div>
                 </c:if>

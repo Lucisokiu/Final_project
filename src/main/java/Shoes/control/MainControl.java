@@ -9,10 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Interpreter.Context;
 import Shoes.dao.DAO;
 import Shoes.entity.Category;
 import Shoes.entity.Product;
 import Shoes.entity.Account;
+
+import static Interpreter.ClientInterpreter.checkInterpreter;
 
 /**
  *
@@ -65,9 +68,14 @@ public class MainControl extends HttpServlet {
         }
         else if(action.equals("login")){
             url = "/signIn-signUp.jsp";
+        }else if(action.equals("Interpreter")){
+            String acModel = request.getParameter("acModel");
+            Context context = new Context(acModel);
+            String notice=new String();
+            notice = checkInterpreter(context);
+            request.setAttribute("notice",notice);
+            url = "/index.jsp";
         }
-        
-        System.out.println("Action:" + action);
         getServletContext().getRequestDispatcher(url).forward(request, response);
     }
 
