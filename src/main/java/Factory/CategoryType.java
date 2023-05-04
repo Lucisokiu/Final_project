@@ -9,12 +9,7 @@ package Factory;
  * @author nhut
  */
 public enum CategoryType {
-
-    /**
-     *
-     */
     
     NIKE, ADIDAS, CONVERSE; 
-    //BREADS, CAKES, CAFEANDBEVERAGE;
 
 }

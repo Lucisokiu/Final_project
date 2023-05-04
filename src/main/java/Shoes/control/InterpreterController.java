@@ -18,7 +18,7 @@ public class InterpreterController {
         String acModel = request.getParameter("acModel");
         Context context = new Context(acModel);
         String notice = new String();
-        checkInterpreter(context);
+        notice = checkInterpreter(context);
         response.sendRedirect(request.getContextPath() + "/MainControl");
     }
     public void doGet(HttpServletRequest request,HttpServletResponse response){
