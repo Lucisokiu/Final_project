@@ -32,7 +32,7 @@ public class ManagerProductControl extends HttpServlet {
         
         List<Product> list = dao.getAllProducts();
         List<Category> listC = dao.getAllCategory();
-        
+
         request.setAttribute("listP", list);
         request.setAttribute("ListC", listC);
         

@@ -28,8 +28,10 @@ public class ManagerAccount extends HttpServlet {
         
         List<Account> listA = dao.getAllUser();
 
-        request.setAttribute("ListA", listA);
-        
+
+        request.setAttribute("listA", listA);
+
+
         // List<Product> list = dao.getAllProducts();
         // List<Category> listC = dao.getAllCategory();
             

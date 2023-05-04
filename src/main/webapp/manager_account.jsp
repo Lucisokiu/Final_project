@@ -36,11 +36,6 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-=======
-    <form action="/ManagerAccount" method="post"></form>
-
->>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
 	<div class="wrap">
 		<div class="container">
 			<div class="row justify-content-between">
@@ -245,12 +240,7 @@
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="selectAll">
-                                    <label for="selectAll"></label>
-                                </span>
-                            </th>
+                            <th>Checkbox</th>
                             <th>ID</th>
                             <th>email</th>
                             <th>Address</th>
@@ -259,7 +249,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach items="${ListA}" var="o">
+                        <c:forEach items="${listA}" var="o">
                             <tr>
                                 <td>
                                     <span class="custom-checkbox">
@@ -267,88 +257,18 @@
                                         <label for="checkbox1"></label>
                                     </span>
                                 </td>
-                                <td>${o.account_id}</td>
+                                <td>1</td>
                                 <td>${o.email}</td>
-<<<<<<< HEAD
                                 <td>${o.address}</td>
-=======
-                                <td>
-                                    <td>${o.address}</td>
-                                </td>
->>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
-                                <td>$${o.userName}</td>
+                                <td>${o.userName}</td>
                                 <td>${o.password}</td>
-                                <td>
-                                    <a href="#editEmployeeModal"  class="edit" data-toggle="modal">Edit</a><br><!-- comment -->
-                                    <a href="DeleteControl?pid=${o.product_id}" class="delete">Delete</a>
-                                </td>
                             </tr>
                         </c:forEach>
                     </tbody>
                 </table>
-                <div class="clearfix">
-                    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-                    <ul class="pagination">
-                        <li class="page-item disabled"><a href="#">Previous</a></li>
-                        <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item"><a href="#" class="page-link">5</a></li>
-                        <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                    </ul>
-                </div>
             </div>
-            <a href="#"><button type="button" class="btn btn-primary">Back to home</button>
+            <a href="MainControl?action=home"><button type="button" class="btn btn-primary">Back to home</button></a>
 
-        </div>
-        <!-- Edit Modal HTML -->
-        <div id="addEmployeeModal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form action="add" method="post">
-                        <div class="modal-header">						
-                            <h4 class="modal-title">Add Account</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="modal-body">					
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input name="name" type="text" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Image</label>
-                                <input name="image" type="text" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Price</label>
-                                <input name="price" type="text" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Title</label>
-                                <textarea name="title" class="form-control" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Description</label>
-                                <textarea name="description" class="form-control" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Category</label>
-                                <select name="category" class="form-select" aria-label="Default select example">
-                                    <c:forEach begin="1" end="3" var="o">
-                                        <option value="1">Giày Adidas</option>
-                                    </c:forEach>
-                                </select>
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                            <input type="submit" class="btn btn-success" value="Add">
-                        </div>
-                    </form>
-                </div>
-            </div>
         </div>
         <!-- Edit Modal HTML -->
         <div id="editEmployeeModal" class="modal fade">

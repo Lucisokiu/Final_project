@@ -146,12 +146,7 @@
         <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>
-                            <span class="custom-checkbox">
-                                <input type="checkbox" id="selectAll">
-                                <label for="selectAll"></label>
-                            </span>
-                        </th>
+                        <th>Checkbox</th>
                         <th>ID</th>
                         <th>Name</th>
                         <th>Image</th>
@@ -183,6 +178,7 @@
                         </tr>
                     </c:forEach>
                 </tbody>
+                
             </table>
     </div>
     <a href="MainControl?action=home"><button type="button" class="btn btn-primary">Back to home</button></a>

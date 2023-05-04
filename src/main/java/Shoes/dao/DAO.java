@@ -29,8 +29,8 @@ public class DAO {
     public List<Product> getAllProducts(){
         List<Product> list = new ArrayList<>();
         String query = "select *\n" +
-                        "FROM product";
-                        // "WHERE product.enable = 1";  
+                        "FROM product \n" +
+                        "WHERE product.enable = 1";  
 
         try {
             conn = new DBContext().getConnection();
