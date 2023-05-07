@@ -46,6 +46,7 @@
 
   <script src="https://kit.fontawesome.com/dd9a768261.js" crossorigin="anonymous"></script>
   <script src="order/js/data.js"></script>
+  </div>
 </head>
 
     <div class="wrap">
@@ -251,7 +252,7 @@
               <p>${detail.description}</p>
               
               <div class="product-count">
-                <label for="size">Quantity</label>
+                <label for="">Quantity</label>
                 <form action="/initcard?action=add" class="display-flex">
                 <div class="qtyminus">-</div>
                 <input type="text" name="quantity" value="1" class="qty" id = "count_product">
@@ -390,10 +391,19 @@
               </div>
             </div>
           </div>
+          <c:if test="${sessionScope.acc.isAdmin != 1}">
+          <div class="collapse navbar-collapse" id="ftco-nav">
+              <c:if test="${not empty notice}">
+              <script>
+                  alert("${notice}");
+              </script>
+              </c:if>
+                  </c:if>
+          </div>
         </footer>
-    
 
-        
+
+
 
 <!-- loader -->
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>

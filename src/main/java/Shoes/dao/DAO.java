@@ -25,7 +25,36 @@ public class DAO {
     Connection conn = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
-    
+
+    public Product FindByAcmodel(String acmodel) {
+        List<Product> listP1 = new ArrayList<>();
+        String query = "SELECT * FROM product\n" +"where ac_model = ? and enable = 1 ";
+        Product product = null;
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, acmodel);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                product = new Product(
+                        rs.getInt("product_id"),
+                        rs.getString("product_name"),
+                        rs.getInt("category_id"),
+                        rs.getString("description"),
+                        rs.getDouble("price"),
+                        rs.getDouble("sale_price"),
+                        rs.getInt("enable"),
+                        rs.getString("productImg_path"),
+                        rs.getString("ac_model")
+                );
+            }
+
+        } catch (Exception e) {
+            System.out.println("Failed 1: " + e);
+        }
+        return product;
+    }
+
     public List<Product> getAllProducts(){
         List<Product> list = new ArrayList<>();
         String query = "select *\n" +
