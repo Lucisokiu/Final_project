@@ -253,24 +253,57 @@
               
               <div class="product-count">
                 <label for="">Quantity</label>
-                <form action="/initcard?action=add" class="display-flex">
-                <div class="qtyminus">-</div>
-                <input type="text" name="quantity" value="1" class="qty" id = "count_product">
-                <div class="qtyplus">+</div>
-                <input type="hidden" name="product_id" value="${detail.product_id}">
-                </form>
-                <button onclick="submitForm()" class="round-black-btn">Add to Cart</button>
-                <button class="round-black-btn goCart-btn">Buy Now</button>
+                  <form id="myForm" class="display-flex" style="height: 48px">
+                      <!-- các trường input của form -->
+                      <div class="qtyminus">-</div>
+                      <input type="text" name="quantity" value="1" class="qty" id = "count_product">
+                      <div class="qtyplus">+</div>
+                      <input type="hidden" name="product_id" value="${detail.product_id}">
+                      <!-- ... -->
+                      <button type="submit" class="round-black-btn" style="margin: 0 8px 0 8px">Submit</button>
+                      <button class="round-black-btn goCart-btn" style="margin: 0 8px 0 8px">Buy Now</button>
+                  </form>
+<%--                <form action="/initcard?action=add" class="display-flex">--%>
+<%--                    <div class="qtyminus">-</div>--%>
+<%--                    <input type="text" name="quantity" value="1" class="qty" id = "count_product">--%>
+<%--                    <div class="qtyplus">+</div>--%>
+<%--                    <input type="hidden" name="product_id" value="${detail.product_id}">--%>
+<%--                </form>--%>
+<%--                <button onclick="submitForm()" class="round-black-btn">Add to Cart</button>--%>
+<%--                <button class="round-black-btn goCart-btn">Buy Now</button>--%>
 
               </div>
             </div>
           </div>
         </div>
       </div>
+<%--<script>--%>
+<%--  function submitForm() {--%>
+<%--  document.forms[0].submit();--%>
+<%--  }--%>
+<%--</script>--%>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-  function submitForm() {
-  document.forms[0].submit();
-  }
+    $(document).ready(function() {
+        $("#myForm").submit(function(event) {
+            // Ngăn chặn form được submit theo cách truyền thống.
+            event.preventDefault();
+
+            // Gửi dữ liệu form bằng AJAX.
+            $.ajax({
+                url: "process-form.php", // đường dẫn đến script xử lý form trên máy chủ
+                type: "POST", // phương thức gửi dữ liệu (POST hoặc GET)
+                data: $(this).serialize(), // dữ liệu form được gửi đi
+                success: function(response) {
+                    // Xử lý phản hồi từ máy chủ nếu cần thiết.
+                    // Ví dụ, bạn có thể cập nhật trang web mà không cần tải lại.
+                },
+                error: function(xhr) {
+                    // Xử lý lỗi nếu có.
+                }
+            });
+        });
+    });
 </script>
 
 

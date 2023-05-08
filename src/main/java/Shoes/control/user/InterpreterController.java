@@ -37,7 +37,10 @@ public class InterpreterController extends HttpServlet  {
         String notice=new String();
         notice = checkInterpreter(context);
         request.setAttribute("notice",notice);
-        Product product = dao.FindByAcmodel(context.getModel());
+        Product product=null;
+        if(context.getIsShoe()){
+            product = dao.FindByAcmodel(context.getModel());
+        }
         String id = null;
         if(product!=null){
             id = String.valueOf(product.getProduct_id());
