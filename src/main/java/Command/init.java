@@ -25,12 +25,7 @@ public class init extends HttpServlet {
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     
     // Hiển thị trang giỏ hàng
-    response.setContentType("text/html;charset=UTF-8");
-    HttpSession session = request.getSession();
-    Account a = (Account) session.getAttribute("acc");
-    DAO dao = new DAO();
-    List<ProductBuilder> listCart = dao.getCart(a.getAccountId());
-
+    // response.setContentType("text/html;charset=UTF-8");
     // List<ProductBuilder> productBuilders = new ArrayList<>();
 
     // for (Product product : listCart) {
@@ -43,9 +38,9 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
     // }
 
 
-    request.setAttribute("listCart", listCart);
+    // request.setAttribute("listCart", listCart);
 
-    request.getRequestDispatcher("detail.jsp").forward(request, response);
+    // request.getRequestDispatcher("detail.jsp").forward(request, response);
 }
 
 @Override

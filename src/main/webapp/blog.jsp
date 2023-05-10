@@ -115,7 +115,7 @@
     </c:if>
 				
 			  
-				<div id="myModal" class="modal">
+				<!-- <div id="myModal" class="modal">
 				<div class="modal-content">
 				  <div class="modal-header">
 					<h5 class="modal-title">Cart</h5>
@@ -136,7 +136,7 @@
 				  <div class="cart-total">
 					<strong class="cart-total-title">Total:</strong>
 					<span class="cart-total-price">87$</span>
-				  </div>
+				  </div> -->
 			  
 			  
 				  <div class="modal-footer">

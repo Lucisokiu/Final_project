@@ -8,9 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Builder.ProductBuilder;
 import Shoes.dao.DAO;
 import Shoes.entity.Account;
 import Singleton.AccountSingleton;
+import java.util.List;
 
 /**
  *
@@ -48,7 +50,12 @@ public class LoginControl extends HttpServlet {
            session.setAttribute("email", a.getEmail());
            session.setAttribute("phone", a.getPhone());
            session.setAttribute("address", a.getAddress());
-           
+
+
+           List<ProductBuilder> listCart = dao.getCart(a.getAccountId());
+           session.setAttribute("listCart", listCart);
+
+
            request.getRequestDispatcher("index.jsp").forward(request, response);
             }
             else{

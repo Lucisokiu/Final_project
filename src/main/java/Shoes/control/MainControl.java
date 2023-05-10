@@ -29,7 +29,8 @@ public class MainControl extends HttpServlet {
         String action = request.getParameter("action");
         // String user = request.getParameter("user");
         // String email = request.getParameter("email");
-        
+
+
         DAO dao = new DAO();
         List<Account> listA = dao.getAllUser();
         List<Product> list = dao.getAllProducts();
@@ -76,6 +77,8 @@ public class MainControl extends HttpServlet {
             request.setAttribute("notice",notice);
             url = "/index.jsp";
         }
+
+        
         getServletContext().getRequestDispatcher(url).forward(request, response);
     }
 

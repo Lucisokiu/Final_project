@@ -128,9 +128,9 @@
         </c:if>
 
             
-        <form id="myModal" class="modal" method="post" action="/initcard">
+        <!-- <form id="myModal" class="modal" method="post" action="/initcard"> -->
 
-          <!-- <div id="myModal" class="modal"> -->
+          <div id="myModal" class="modal">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title">Cart</h5>
@@ -195,8 +195,8 @@
             </div>
          
           
-          <!-- </div> -->
-        </form>
+          </div>
+        <!-- </form> -->
 
 
       </nav>
