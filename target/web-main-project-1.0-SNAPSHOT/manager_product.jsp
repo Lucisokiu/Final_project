@@ -152,6 +152,7 @@
                         <th>Image</th>
                         <th>Price</th>
                         <th>Category</th>
+                        <th>quantity</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -171,6 +172,7 @@
                             </td>
                             <td>$${o.price}</td>
                             <td>${o.category_id}</td>
+                            <td>${o.quantity}</td>
                             <td>
                                 <a href="#editEmployeeModal"  class="edit" data-toggle="modal">Edit</a><br><!-- comment -->
                                 <a href="DeleteControl?pid=${o.product_id}" class="delete">Delete</a>

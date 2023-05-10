@@ -25,7 +25,36 @@ public class DAO {
     Connection conn = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
-    
+
+    public Product FindByAcmodel(String acmodel) {
+        List<Product> listP1 = new ArrayList<>();
+        String query = "SELECT * FROM product\n" +"where ac_model = ? and enable = 1 ";
+        Product product = null;
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, acmodel);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                product = new Product(
+                        rs.getInt("product_id"),
+                        rs.getString("product_name"),
+                        rs.getInt("category_id"),
+                        rs.getString("description"),
+                        rs.getDouble("price"),
+                        rs.getDouble("sale_price"),
+                        rs.getInt("enable"),
+                        rs.getString("productImg_path"),
+                        rs.getString("ac_model")
+                );
+            }
+
+        } catch (Exception e) {
+            System.out.println("Failed 1: " + e);
+        }
+        return product;
+    }
+
     public List<Product> getAllProducts(){
         List<Product> list = new ArrayList<>();
         String query = "select *\n" +
@@ -38,14 +67,18 @@ public class DAO {
             rs = ps.executeQuery();
 
             while(rs.next()){
-                list.add(new Product(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getInt(3),
-                        rs.getString(4),
-                        rs.getInt(5),
-                        rs.getInt(6),
-                        rs.getInt(7),
-                        rs.getString(8)));
+                list.add(new Product(
+                        rs.getInt("product_id"),
+                        rs.getString("product_name"),
+                        rs.getInt("category_id"),
+                        rs.getString("description"),
+                        rs.getDouble("price"),
+                        rs.getDouble("sale_price"),
+                        rs.getInt("enable"),
+                        rs.getString("productImg_path"),
+                        rs.getInt("quantity"),
+                        rs.getString("ac_model"))
+                );
             }
         } catch (Exception e) {
             System.out.println("Failed Product: " + e);
@@ -90,14 +123,16 @@ public class DAO {
 
             while(rs.next()){
                 listP1.add(new Product(
-                rs.getInt(1),
-                rs.getString(2),
-                rs.getInt(3),
-                rs.getString(4),
-                rs.getDouble(5),
-                rs.getDouble(6),
-                rs.getInt(7),
-                rs.getString(8)));
+                        rs.getInt("product_id"),
+                        rs.getString("product_name"),
+                        rs.getInt("category_id"),
+                        rs.getString("description"),
+                        rs.getDouble("price"),
+                        rs.getDouble("sale_price"),
+                        rs.getInt("enable"),
+                        rs.getString("productImg_path"),
+                        rs.getInt("quantity"),
+                        rs.getString("ac_model")));
             }
         } catch (Exception e) {
             System.out.println("Failed 1: " + e);
@@ -121,14 +156,17 @@ public class DAO {
             rs = ps.executeQuery();
 
             while(rs.next()){
-                listP2.add(new Product(rs.getInt(1),
-                rs.getString(2),
-                rs.getInt(3),
-                rs.getString(4),
-                rs.getDouble(5),
-                rs.getDouble(6),
-                rs.getInt(7),
-                rs.getString(8)));
+                listP2.add(new Product(
+                        rs.getInt("product_id"),
+                        rs.getString("product_name"),
+                        rs.getInt("category_id"),
+                        rs.getString("description"),
+                        rs.getDouble("price"),
+                        rs.getDouble("sale_price"),
+                        rs.getInt("enable"),
+                        rs.getString("productImg_path"),
+                        rs.getInt("quantity"),
+                        rs.getString("ac_model")));
             }
         } catch (Exception e) {
             System.out.println("Failed 2: " + e);
@@ -153,14 +191,17 @@ public class DAO {
             rs = ps.executeQuery();
 
             while(rs.next()){
-                listP3.add(new Product(rs.getInt(1),
-                rs.getString(2),
-                rs.getInt(3),
-                rs.getString(4),
-                rs.getDouble(5),
-                rs.getDouble(6),
-                rs.getInt(7),
-                rs.getString(8)));
+                listP3.add(new Product(
+                        rs.getInt("product_id"),
+                        rs.getString("product_name"),
+                        rs.getInt("category_id"),
+                        rs.getString("description"),
+                        rs.getDouble("price"),
+                        rs.getDouble("sale_price"),
+                        rs.getInt("enable"),
+                        rs.getString("productImg_path"),
+                        rs.getInt("quantity"),
+                        rs.getString("ac_model")));
         }
         } catch (Exception e) {
             System.out.println("Failed 3: " + e);

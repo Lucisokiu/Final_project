@@ -10,7 +10,8 @@ package Shoes.entity;
  */
 public class Product {
     private int product_id;
-    
+
+
     private String product_name;
     
     private int category_id;
@@ -26,9 +27,35 @@ public class Product {
     private String productImg_path;
 
     private int quantity;
+    private String ac_model;
+
+    public Product(int product_id, String product_name,
+                   int category_id, String description,
+                   double price, double sale_price,
+                   int enable, String productImg_path,
+                   String ac_model) {
+        this.product_id = product_id;
+        this.product_name = product_name;
+        this.category_id = category_id;
+        this.description = description;
+        this.price= price;
+        this.sale_price=sale_price;
+        this.enable = enable;
+        this.productImg_path = productImg_path;
+        this.ac_model= ac_model;
+    }
+
+
+    public String getAc_model() {
+        return ac_model;
+    }
+
+    public void setAc_model(String ac_model) {
+        this.ac_model = ac_model;
+    }
     // có thểm quantity dùng cho cart
     public Product(int product_id, String product_name, int category_id, String description, double price,
-            double sale_price, int enable, String productImg_path, int quantity) {
+            double sale_price, int enable, String productImg_path, int quantity,String ac_model) {
         this.product_id = product_id;
         this.product_name = product_name;
         this.category_id = category_id;
@@ -38,7 +65,9 @@ public class Product {
         this.enable = enable;
         this.productImg_path = productImg_path;
         this.quantity = quantity;
+        this.ac_model= ac_model;
     }
+
 
     public int getQuantity() {
         return quantity;

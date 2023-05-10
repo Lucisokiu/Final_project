@@ -34,9 +34,6 @@ public class DetailControl extends HttpServlet {
         request.setAttribute("ListP2", listP2);
         request.setAttribute("ListP3", listP3);
         request.getRequestDispatcher("detail.jsp").forward(request, response);
-        
-     
-       
     }
 
     @Override

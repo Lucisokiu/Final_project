@@ -14,6 +14,7 @@ import Shoes.dao.DAO;
 import Shoes.entity.Category;
 import Shoes.entity.Product;
 import Shoes.entity.Account;
+import javax.servlet.RequestDispatcher;
 
 import static Interpreter.ClientInterpreter.checkInterpreter;
 
@@ -50,6 +51,7 @@ public class MainControl extends HttpServlet {
             action = "home";
         }
         if(action.equals("home")){
+            request.setAttribute("notice", request.getAttribute("notice"));
             url = "/index.jsp";
         }
         else if(action.equals("about")){
@@ -70,12 +72,17 @@ public class MainControl extends HttpServlet {
         else if(action.equals("login")){
             url = "/signIn-signUp.jsp";
         }else if(action.equals("Interpreter")){
-            String acModel = request.getParameter("acModel");
-            Context context = new Context(acModel);
-            String notice=new String();
-            notice = checkInterpreter(context);
-            request.setAttribute("notice",notice);
-            url = "/index.jsp";
+//            String acModel = request.getParameter("acModel");
+//            Context context = new Context(acModel);
+//            String notice=new String();
+//            notice = checkInterpreter(context);
+//            request.setAttribute("notice",notice);
+//            Product product = dao.FindByAcmodel(context.getModel());
+//            String id = String.valueOf(product.getProduct_id());
+//            Product p = dao.getProductByID(id);
+//            request.setAttribute("detail", p);
+//            url = "/detail.jsp";
+//            response.sendRedirect(request.getContextPath() + "/detail?pid="+id);
         }
 
         
@@ -84,6 +91,7 @@ public class MainControl extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         doPost(request, response);
     }
 }

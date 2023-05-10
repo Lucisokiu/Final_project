@@ -84,7 +84,7 @@
                             </script>
                         </c:if>
 
-                        <form action="<c:url value="/MainControl?action=Interpreter"/>" method="post">
+                        <form action="<c:url value="/InterpreterController"/>" method="post">
                             <label for="search-input">kiểm tra:</label>
                             <input  type="text" id="search-input" name="acModel" placeholder="nhập code">
                         </form>
@@ -535,7 +535,7 @@
                             </div>
                             <div class="col-md-6 col-lg-3 ftco-animate">
                                     <div class="staff">
-                                            <div class="img" style="background-image: url(images/img/CEO/ElonMusk.jpg);"></div>
+                                            <div class="img" style="background-image: url(images/img/CEO/leminhtai.jpg);"></div>
                                             <div class="text px-4 pt-2">
                                                     <h3>Lê Minh Tài</h3>
                                                     <span class="position mb-2">Leader</span>
