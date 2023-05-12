@@ -33,8 +33,8 @@ public class MailUtilLocal {
         props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         props.put("mail.smtp.port", "587");
         
-        final String myAccountEmail = "nguyenminhnhut435@gmail.com";
-        final String password = "123";
+        final String myAccountEmail = "tailx0913@gmail.com";
+        final String password = "sjqmqpyyrvupkjkf";
         
         //get Session
         //Session session = Session.getDefaultInstance(props);
@@ -57,10 +57,10 @@ public class MailUtilLocal {
             message.setText(body);
         }
 
-        Address fromAddress = new InternetAddress(from);
-        Address toAddress = new InternetAddress(to);
-        message.setFrom(fromAddress);
-        message.setRecipient(Message.RecipientType.TO, toAddress);
+//        Address fromAddress = new InternetAddress(from);
+//        Address toAddress = new InternetAddress(to);
+//        message.setFrom(fromAddress);
+        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
         Transport.send(message);
         System.out.println("Message sent successfully");
         // compose message
