@@ -43,6 +43,8 @@ public class MainControl extends HttpServlet {
         List<Product> listP2 = dao.getProductByCate2("2");
         List<Product> listP3 = dao.getProductByCate3("3");
         
+
+        
         // request.setAttribute("ListP", list);
         request.setAttribute("ListP1", listP1);
         request.setAttribute("ListP2", listP2);
