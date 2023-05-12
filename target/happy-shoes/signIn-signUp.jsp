@@ -24,8 +24,10 @@
                     <input name="email" type="email" placeholder="Email"/>
                     <input name="pass" type="password" placeholder="Password"/>
                     <input name="confirm" type="password" placeholder="Confirm password">
+                    <input name="fullName" type="text" placeholder="Full Name">
                     <input name="address" type="text" placeholder="Address" />
                     <input name="phone" type="text" placeholder="Phone Number"/>
+                    <input name="admin" type="text" placeholder="Admin Password"/>
                     <a href="./checkout.jsp"><button type="submit">Sign Up</button></a>
                 </form>
             </div>
@@ -36,7 +38,7 @@
                     <p class="text-danger" style="color: #ff4458">${mess}</p>
                     <input name ="user" type="text" placeholder="User name" />
                     <input name="pass" type="password" placeholder="Password" />
-                    <a href="#">Forgot your password?</a>
+                    <!-- <a href="#">Forgot your password?</a> -->
                     <a href="./checkout.jsp"><button type="submit">Sign In</button></a>
                 </form>
             </div>

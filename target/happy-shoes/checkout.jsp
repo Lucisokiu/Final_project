@@ -74,7 +74,7 @@
                         <li class="nav-item"><a href="MainControl?action=about" class="nav-link">About</a></li>
                         <!-- <li class="nav-item"><a href="./order/order.html" class="nav-link">Order</a></li> -->
                         <li class="nav-item"><a href="MainControl?action=menu" class="nav-link">Menu</a></li>
-                        <li class="nav-item"><a href="MainControl?action=blog" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="cartcontrol?action=cartcontrol" class="nav-link">Cartcontrol</a></li>
                         <li class="nav-item"><a href="ManagerProductControl?action=ManagerProductControl" class="nav-link">Manager Product</a></li>
                         <li class="nav-item"><a href="ManagerAccount?action=ManagerAccount" class="nav-link">Manager Account</a></li>
                     </ul>
@@ -137,7 +137,6 @@
           
                                     <div class="cart-quantity cart-column">
                                           <input class="cart-quantity-input" type="number" value="${o.quantity}">
-                                          <button class="modal-btn btn-danger" type="button">Delete</button>
                                     </div>
           
                                   </div>
@@ -211,7 +210,7 @@
                             <c:forEach items="${sessionScope.listCard}" var = "o">
                                 <input type="hidden" name="product_id" value="${o.product_id}">
                                 <input type="hidden" name="quantity" value="${o.quantity}">
-                                
+
                                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                                 <div>
                                     <h6 class="my-0">Price</h6>

@@ -74,7 +74,7 @@
                         <li class="nav-item"><a href="MainControl?action=about" class="nav-link">About</a></li>
                         <!-- <li class="nav-item"><a href="./order/order.html" class="nav-link">Order</a></li> -->
                         <li class="nav-item"><a href="MainControl?action=menu" class="nav-link">Menu</a></li>
-                        <li class="nav-item"><a href="MainControl?action=blog" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="cartcontrol?action=cartcontrol" class="nav-link">Cartcontrol</a></li>
                         <li class="nav-item"><a href="ManagerProductControl?action=ManagerProductControl" class="nav-link">Manager Product</a></li>
                         <li class="nav-item"><a href="ManagerAccount?action=ManagerAccount" class="nav-link">Manager Account</a></li>
                     </ul>

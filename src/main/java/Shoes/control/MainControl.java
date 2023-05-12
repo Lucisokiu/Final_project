@@ -8,7 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import Builder.ProductBuilder;
 import Interpreter.Context;
 import Shoes.dao.DAO;
 import Shoes.entity.Category;
@@ -28,24 +30,25 @@ public class MainControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url= "/index.jsp";
         String action = request.getParameter("action");
+
         // String user = request.getParameter("user");
         // String email = request.getParameter("email");
-
-
+        HttpSession session = request.getSession();
         DAO dao = new DAO();
-        List<Account> listA = dao.getAllUser();
-        List<Product> list = dao.getAllProducts();
+        List<ProductBuilder> listCard = dao.getCart((int)session.getAttribute("userid"));
+        session.setAttribute("listCard", listCard);
+        // List<Account> listA = dao.getAllUser();
+        // List<Product> list = dao.getAllProducts();
         List<Product> listP1 = dao.getProductByCate1("1");
         List<Product> listP2 = dao.getProductByCate2("2");
         List<Product> listP3 = dao.getProductByCate3("3");
-        List<Category> listC = dao.getAllCategory();
         
-        request.setAttribute("ListP", list);
+        // request.setAttribute("ListP", list);
         request.setAttribute("ListP1", listP1);
         request.setAttribute("ListP2", listP2);
         request.setAttribute("ListP3", listP3);
-        request.setAttribute("ListC", listC);
-        request.setAttribute("ListA", listA);
+        // request.setAttribute("ListC", listC);
+        // request.setAttribute("ListA", listA);
 
         if (action == null){
             action = "home";
@@ -71,7 +74,8 @@ public class MainControl extends HttpServlet {
         }
         else if(action.equals("login")){
             url = "/signIn-signUp.jsp";
-        }else if(action.equals("Interpreter")){
+        }
+        else if(action.equals("Interpreter")){
 //            String acModel = request.getParameter("acModel");
 //            Context context = new Context(acModel);
 //            String notice=new String();

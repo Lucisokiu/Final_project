@@ -102,7 +102,7 @@
                     <li class="nav-item"><a href="MainControl?action=about" class="nav-link">About</a></li>
                     <!-- <li class="nav-item"><a href="./order/order.html" class="nav-link">Order</a></li> -->
                     <li class="nav-item"><a href="MainControl?action=menu" class="nav-link">Menu</a></li>
-                    <li class="nav-item"><a href="MainControl?action=reservation" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="cartcontrol?action=cartcontrol" class="nav-link">Cartcontrol</a></li>
                     <li class="nav-item"><a href="ManagerProductControl?action=manager_product" class="nav-link">Manager Product</a></li>
                     <li class="nav-item"><a href="MainControl?action=manager_account" class="nav-link">Manager Account</a></li>
                 </ul>
@@ -160,7 +160,7 @@
                                 <input type="hidden" name="quantity" value="${o.quantity}">
                                 <button class="modal-btn btn-danger" type="button">Delete</button>
                           </div>
-
+                          </form>
                         </div>
                   </c:forEach>
 

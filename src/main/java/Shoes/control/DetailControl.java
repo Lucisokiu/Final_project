@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Builder.ProductBuilder;
 import Shoes.dao.DAO;
 import Shoes.entity.Product;
 
@@ -24,7 +25,14 @@ public class DetailControl extends HttpServlet {
         // HttpSession session = request.getSession();
         // int userid = (int) session.getAttribute("userid");
         // request.setAttribute("userid", userid);
+        HttpSession session = request.getSession();
 
+        List<ProductBuilder> listCardtest = (List<ProductBuilder>) session.getAttribute("listCard");
+        if (listCardtest == null) {
+        DAO dao = new DAO();
+        List<ProductBuilder> listCard = dao.getCart((int)session.getAttribute("userid"));
+        session.setAttribute("listCard", listCard);
+        }
 
         String id = request.getParameter("pid");
 

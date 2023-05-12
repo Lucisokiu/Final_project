@@ -6,7 +6,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="icon" href="/images/img/blogs/adidas.jpg" type="image/x-icon" />
-    <title>Happy Shoes Shop | Reservation</title>
+    <title>Happy Shoes Shop | Cartcontrol</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -241,15 +241,15 @@
                     <thead>
                         <tr>
                             <th>Checkbox</th>
-                            <th>ID</th>
-                            <th>email</th>
-                            <th>Address</th>
-                            <th>userName</th>
-                            <th>Pass</th>
+                            <th>ID_account</th>
+                            <th>ID_product</th>
+                            <th>Product_Name</th>
+                            <th>Quantity</th>
+                            <th>Odered</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach items="${listA}" var="o">
+                        <c:forEach items="${sessionScope.listAllCard}" var="o">
                             <tr>
                                 <td>
                                     <span class="custom-checkbox">
@@ -258,10 +258,10 @@
                                     </span>
                                 </td>
                                 <td>${o.account_id}</td>
-                                <td>${o.email}</td>
-                                <td>${o.address}</td>
-                                <td>${o.userName}</td>
-                                <td>${o.password}</td>
+                                <td>${o.product_id}</td>
+                                <td>${o.product_name}</td>
+                                <td>${o.quantity}</td>
+                                <td>${o.enable}</td>
                             </tr>
                         </c:forEach>
                     </tbody>
@@ -271,7 +271,7 @@
 
         </div>
         <!-- Edit Modal HTML -->
-        <div id="editEmployeeModal" class="modal fade">
+        <!-- <div id="editEmployeeModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form>
@@ -304,7 +304,7 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Delete Modal HTML -->
         <div id="deleteEmployeeModal" class="modal fade">
             <div class="modal-dialog">

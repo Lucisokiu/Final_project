@@ -36,6 +36,10 @@ public class SignUpControl extends HttpServlet {
         String confirm = request.getParameter("confirm");
         String address = request.getParameter("address");
         String phone = request.getParameter("phone");
+        String admin = request.getParameter("admin");
+        String fullName = request.getParameter("fullName");
+
+
         if(!pass.equals(confirm)){
             response.sendRedirect("signIn-signUp.jsp");
         }
@@ -52,7 +56,7 @@ public class SignUpControl extends HttpServlet {
             if (acc == null){
                 if(accountexist == null){
                     if(pass.equals(confirm)){
-                        dao.signup(user, pass, phone, email, phone, address);
+                        dao.signup(user, pass, fullName, email, phone, address,admin);
                         response.sendRedirect("MainControl");
                     }
                     else{

@@ -63,8 +63,8 @@ public class Checkout extends HttpServlet {
 
 
         // request.setAttribute("ListA", listA);
-        request.getRequestDispatcher("checkout.jsp");
-        // request.getRequestDispatcher("checkoutMail").forward(request, response);
+        // request.getRequestDispatcher("checkout.jsp");
+        request.getRequestDispatcher("checkoutMail").forward(request, response);
     }
 
     @Override

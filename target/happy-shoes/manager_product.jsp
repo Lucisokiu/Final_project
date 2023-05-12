@@ -91,7 +91,7 @@
                 <li class="nav-item"><a href="MainControl?action=about" class="nav-link">About</a></li>
                 <!-- <li class="nav-item"><a href="./order/order.html" class="nav-link">Order</a></li> -->
                 <li class="nav-item"><a href="MainControl?action=menu" class="nav-link">Menu</a></li>
-                <li class="nav-item"><a href="MainControl?action=reservation" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="cartcontrol?action=cartcontrol" class="nav-link">Cartcontrol</a></li>
                 <li class="nav-item active"><a href="ManagerProductControl?action=ManagerProductControl" class="nav-link">Manager Product</a></li>
                 <li class="nav-item"><a href="ManagerAccount?action=ManagerAccount" class="nav-link">Manager Account</a></li>
             </ul>
@@ -194,7 +194,11 @@
                         <h4 class="modal-title">Add Product</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
-                    <div class="modal-body">					
+                    <div class="modal-body">	
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input name="id" type="text" class="form-control" required>
+                        </div>				
                         <div class="form-group">
                             <label>Name</label>
                             <input name="name" type="text" class="form-control" required>

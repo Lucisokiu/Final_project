@@ -10,7 +10,7 @@ public class ProductBuilder {
         private int enable;
         private String productImg_path;
         private int quantity;
-
+        private int account_id;
         
 
 
@@ -30,6 +30,10 @@ public class ProductBuilder {
 
 
         
+        public int getAccount_id() {
+            return account_id;
+        }
+
         public static class Builder {
             private int product_id;
             private String product_name;
@@ -40,11 +44,16 @@ public class ProductBuilder {
             private int enable;
             private String productImg_path;
             private int quantity;
-    
+            private int account_id;
+
             public Builder(int product_id) {
                 this.product_id = product_id;
             }
-    
+
+            public Builder setAccount_id(int account_id) {
+                this.account_id = account_id;
+                return this;
+            }
             public Builder setProductName(String product_name) {
                 this.product_name = product_name;
                 return this;
@@ -86,7 +95,7 @@ public class ProductBuilder {
             }
     
             public ProductBuilder build() {
-                return new ProductBuilder(product_id, product_name, category_id, description, price, sale_price, enable, productImg_path, quantity);
+                return new ProductBuilder(product_id, product_name, category_id, description, price, sale_price, enable, productImg_path, quantity, account_id);
                 // return new ProductBuilder(this);
             }
         }
@@ -148,6 +157,19 @@ public class ProductBuilder {
             this.enable = enable;
             this.productImg_path = productImg_path;
             this.quantity = quantity;
+        }
+
+        public ProductBuilder(int product_id, String product_name, int category_id, String description, double price, double sale_price, int enable, String productImg_path, int quantity, int account_id) {
+            this.product_id = product_id;
+            this.product_name = product_name;
+            this.category_id = category_id;
+            this.description = description;
+            this.price = price;
+            this.sale_price = sale_price;
+            this.enable = enable;
+            this.productImg_path = productImg_path;
+            this.quantity = quantity;
+            this.account_id = account_id;
         }
     
 }
