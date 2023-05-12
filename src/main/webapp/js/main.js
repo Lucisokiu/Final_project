@@ -356,91 +356,93 @@ btn_goCart.onclick = function () {
   }
 
 // update cart 
-function updatecart() {
-	var cart_item = document.getElementsByClassName("cart-items")[0];
-	var cart_rows = cart_item.getElementsByClassName("cart-row");
-	var cart_total = document.getElementsByClassName("cart-total")[0];
-	var total = cart_total.getElementsByClassName("cart-total-price");
-	for (var i = 0; i < cart_rows.length; i++) {
-	  var cart_row = cart_rows[i];
-	  var price_item = cart_row.getElementsByClassName("cart-price ")[0];
-	  var quantity_item = cart_row.getElementsByClassName("cart-quantity-input")[0];
-	  var price = parseFloat(price_item.innerText);// chuyển một chuổi string sang number để tính tổng tiền.
-	  var quantity = quantity_item.value; // lấy giá trị trong thẻ input
-	  total = total + (price * quantity);
-	}
-	document.getElementsByClassName("cart-total-price")[0].innerText = total + '$';
-  }
+// function updatecart() {
+// 	var cart_item = document.getElementsByClassName("cart-items")[0];
+// 	var cart_rows = cart_item.getElementsByClassName("cart-row");
+// 	var cart_total = document.getElementsByClassName("cart-total")[0];
+// 	var total = cart_total.getElementsByClassName("cart-total-price");
+// 	for (var i = 0; i < cart_rows.length; i++) {
+// 	  var cart_row = cart_rows[i];
+// 	  var price_item = cart_row.getElementsByClassName("cart-price ")[0];
+// 	  var quantity_item = cart_row.getElementsByClassName("cart-quantity-input")[0];
+// 	  var price = parseFloat(price_item.innerText);// chuyển một chuổi string sang number để tính tổng tiền.
+// 	  var quantity = quantity_item.value; // lấy giá trị trong thẻ input
+// 	  total = total + (price * quantity);
+// 	}
+// 	document.getElementsByClassName("cart-total-price")[0].innerText = total + '$';
+//   }
 
   // xóa cart
-var remove_cart = document.getElementsByClassName("btn-danger");
-for (var i = 0; i < remove_cart.length; i++) {
-  var button = remove_cart[i];
-  button.addEventListener("click", function () {
-    var button_remove = event.target;
-    button_remove.parentElement.parentElement.remove();
-	updatecart();
-  });
+// var remove_cart = document.getElementsByClassName("btn-danger");
+// for (var i = 0; i < remove_cart.length; i++) {
+//   var button = remove_cart[i];
+//   button.addEventListener("click", function () {
+//     var button_remove = event.target;
+//     button_remove.parentElement.parentElement.remove();
+// 	updatecart();
+//   });
   
-}
+// }
 
 // thay đổi số lượng sản phẩm
-var quantity_input = document.getElementsByClassName("cart-quantity-input");
-for (var i = 0; i < quantity_input.length; i++) {
-  var input = quantity_input[i];
-  input.addEventListener("change", function (event) {
-    var input = event.target;
-    if (isNaN(input.value) || input.value <= 0) {
-      input.value = 1;
-    }
-    updatecart();
-  });
-}
+// var quantity_input = document.getElementsByClassName("cart-quantity-input");
+// for (var i = 0; i < quantity_input.length; i++) {
+//   var input = quantity_input[i];
+//   input.addEventListener("change", function (event) {
+//     var input = event.target;
+//     if (isNaN(input.value) || input.value <= 0) {
+//       input.value = 1;
+//     }
+//     updatecart();
+//   });
+// }
 
 // Thêm vào giỏ
-var add_cart = document.getElementsByClassName("btn-sm");
-for (var i = 0; i < add_cart.length; i++) {
-  var add = add_cart[i];
-  add.addEventListener("click", function (event) {
+// var add_cart = document.getElementsByClassName("btn-sm");
+// for (var i = 0; i < add_cart.length; i++) {
+//   var add = add_cart[i];
+//   add.addEventListener("click", function (event) {
 
-    var button = event.target;
-    var product = button.parentElement.parentElement;
-    var img = product.getElementsByClassName("product-thumb")[0].src;
-    var title = product.getElementsByClassName("product-title")[0].innerText;
-    var price = product.getElementsByClassName("product-price")[0].innerText;
+//     var button = event.target;
+//     var product = button.parentElement.parentElement;
+//     var img = product.getElementsByClassName("product-thumb")[0].src;
+//     var title = product.getElementsByClassName("product-title")[0].innerText;
+//     var price = product.getElementsByClassName("product-price")[0].innerText;
 	
-	var sl = 1;
-    addItemToCart(title, price, img, sl);
+// 	var sl = 1;
+//     addItemToCart(title, price, img, sl);
    
-    updatecart();
-  });
-}
+//     updatecart();
+//   });
+// }
 
-var add_cart_btn = document.getElementsByClassName("round-black-btn");
-for (var i = 0; i < add_cart.length; i++) {
-  var add = add_cart_btn[i];
-  add.addEventListener("click", function (event) {
 
-    var button = event.target;
-    var product = button.parentElement.parentElement.parentElement.parentElement;		
-    var img = product.parentElement.getElementsByClassName("main_img")[0].src	;	
-    var title = product.parentElement.getElementsByClassName("product-name")[0].innerText;			
-    var price = product.parentElement.getElementsByClassName("product-price")[0].innerText;	
-	//var total = updatecart().total
-	var sl = product.parentElement.getElementsByClassName("qty")[0].value	;		
-	//var sl = product.parentElement.getElementById("count_product")[0].innerText
-    addItemToCart(title, price, img, sl);
-    // Khi thêm sản phẩm vào giỏ hàng thì sẽ hiển thị modal
-    //modal.style.display = "block";
+// insert html
+// var add_cart_btn = document.getElementsByClassName("round-black-btn");
+// for (var i = 0; i < add_cart.length; i++) {
+//   var add = add_cart_btn[i];
+//   add.addEventListener("click", function (event) {
+
+//     var button = event.target;
+//     var product = button.parentElement.parentElement.parentElement.parentElement;		
+//     var img = product.parentElement.getElementsByClassName("main_img")[0].src	;	
+//     var title = product.parentElement.getElementsByClassName("product-name")[0].innerText;			
+//     var price = product.parentElement.getElementsByClassName("product-price")[0].innerText;	
+// 	//var total = updatecart().total
+// 	var sl = product.parentElement.getElementsByClassName("qty")[0].value	;		
+// 	//var sl = product.parentElement.getElementById("count_product")[0].innerText
+//     addItemToCart(title, price, img, sl);
+//     // Khi thêm sản phẩm vào giỏ hàng thì sẽ hiển thị modal
+//     //modal.style.display = "block";
     
-    updatecart();
-  });
-}
+//     updatecart();
+//   });
+// }
 
-function addItemToCart(title, price, img, sl) {
+function addItemToCart(title) {
   var cartRow = document.createElement('div');
   cartRow.classList.add('cart-row');
-  var cartItems = document.getElementsByClassName('cart-items')[0];				
+  var cartItems = document.getElementsByClassName('cart-items')[0];		
   var cart_title = cartItems.getElementsByClassName('cart-item-title');
   //Nếu title của sản phẩm bằng với title mà bạn thêm vao giỏ hàng thì sẽ thông báo cho user.
   for (var i = 0; i < cart_title.length; i++) {
@@ -449,31 +451,31 @@ function addItemToCart(title, price, img, sl) {
       return;
     }
   }
-  var cartRowContents = `
-  <div class="cart-item cart-column">
-      <img class="cart-item-image" src="${img}" width="100" height="100">
-      <span class="cart-item-title">${title}</span>
-  </div>
-  <span class="cart-price cart-column">${price}</span>
-  <div class="cart-quantity cart-column">
-      <input class="cart-quantity-input" type="number" value="${sl}">       
-      <button class="modal-btn btn-danger" type="button">Delete</button>
-  </div>
-  `;
-  cartRow.innerHTML = cartRowContents;
-  cartItems.append(cartRow);
-  cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', function () {
-    var button_remove = event.target;
-    button_remove.parentElement.parentElement.remove();
-    updatecart();
-  });
-  cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', function (event) {
-    var input = event.target;
-    if (isNaN(input.value) || input.value <= 0) {
-      input.value = 1;
-    }
-    updatecart();
-  });
+//   var cartRowContents = `
+//   <div class="cart-item cart-column">
+//       <img class="cart-item-image" src="${img}" width="100" height="100">
+//       <span class="cart-item-title">${title}</span>
+//   </div>
+//   <span class="cart-price cart-column">${price}</span>
+//   <div class="cart-quantity cart-column">
+//       <input class="cart-quantity-input" type="number" value="${sl}">       
+//       <button class="modal-btn btn-danger" type="button">Delete</button>
+//   </div>
+//   `;
+//   cartRow.innerHTML = cartRowContents;
+//   cartItems.append(cartRow);
+//   cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', function () {
+//     var button_remove = event.target;
+//     button_remove.parentElement.parentElement.remove();
+//     updatecart();
+//   });
+//   cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', function (event) {
+//     var input = event.target;
+//     if (isNaN(input.value) || input.value <= 0) {
+//       input.value = 1;
+//     }
+//     updatecart();
+//   });
 }
 
 })(jQuery);

@@ -21,12 +21,10 @@
   <link rel="stylesheet" href="css/bootstrap-datepicker.css">
   <link rel="stylesheet" href="css/jquery.timepicker.css">
 
-  
+
   <link rel="stylesheet" href="css/flaticon.css">
 
   
-  <link rel="stylesheet" href="css/flaticon.css">
-
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -129,7 +127,7 @@
         </c:if>
 
             
-        <!-- <form id="myModal" class="modal" method="post" action="/initcard"> -->
+        <!-- <form id="myModal" class="modal" method="post" action="checkout"> -->
 
           <div id="myModal" class="modal">
             <div class="modal-content">
@@ -146,7 +144,7 @@
                 </div>
 
                 <div class="cart-items">
-                  <c:forEach items="${listCart}" var = "o">
+                  <c:forEach items="${sessionScope.listCard}" var = "o">
 
                   <div class="cart-row">
                           <div class="cart-item cart-column">
@@ -156,8 +154,10 @@
 
                           <span class="cart-price cart-column">${o.price}</span>
 
+                          <form method="post" action="initcard?action=delete&quantity=${o.quantity}&product_id=${o.product_id}&account_id=${sessionScope.userid}">
                           <div class="cart-quantity cart-column">
                                 <input class="cart-quantity-input" type="number" value="${o.quantity}">
+                                <input type="hidden" name="quantity" value="${o.quantity}">
                                 <button class="modal-btn btn-danger" type="button">Delete</button>
                           </div>
 
@@ -166,10 +166,12 @@
 
               </div>
 
+              
+
               <div  id= "totalPrice" class="cart-total">
 
                 <c:set var="total" value="0" />
-                <c:forEach var="o" items="${list}">
+                <c:forEach var="o" items="${sessionScope.listCard}">
                   <c:set var="subtotal" value="${o.quantity * o.price}" />
                   <c:set var="total" value="${total + subtotal}" />
                 </c:forEach>
@@ -186,6 +188,7 @@
                     <button type="button" class="modal-btn btn-secondary close-footer">Close</button>
                     <c:if test="${sessionScope.acc == null}">
                         <a href="signIn-signUp.jsp"><button type="button" class="modal-btn btn-primary order">Checkout</button></a>
+
                     </c:if>
 
                     <c:if test="${sessionScope.acc != null}">
@@ -240,12 +243,13 @@
               <div class="product-info">
                 <div class="product-name">${detail.product_name}</div>
                 <div class="reviews-counter">
-                  <c:if test="${detail.enable == 1}">
-                    <span>còn hàng</span>
-                  </c:if>
-                  <c:if test="${detail.enable != 1}">
+                  <c:if test="${detail.quantity == 0}">
                     <span>hết hàng</span>
                   </c:if>
+                  <c:if test="${detail.quantity > 0}">
+                    <span>còn hàng</span>
+                  </c:if>
+                  
                 </div>
                 <div class="product-price-discount"><span class="product-price">${detail.price} $</span></div>
               </div>
@@ -253,58 +257,45 @@
               
               <div class="product-count">
                 <label for="">Quantity</label>
-                  <form id="myForm" class="display-flex" style="height: 48px">
-                      <!-- các trường input của form -->
+              
+                <form id="addtoCard" action="initcard?action=add&product_id=${detail.product_id}&account_id=${sessionScope.userid}" method="post">
+                  <div  class="display-flex">
                       <div class="qtyminus">-</div>
                       <input type="text" name="quantity" value="1" class="qty" id = "count_product">
                       <div class="qtyplus">+</div>
-                      <input type="hidden" name="product_id" value="${detail.product_id}">
-                      <!-- ... -->
-                      <button type="submit" class="round-black-btn" style="margin: 0 8px 0 8px">Submit</button>
-                      <button class="round-black-btn goCart-btn" style="margin: 0 8px 0 8px">Buy Now</button>
+                    </div>
+                    <br>
+                    <div class="product-buttons-add">
+                      <!-- <input type="hidden" name="product_id" value="${detail.product_id}">
+                      <input type="hidden" name="account_id" value="${sessionScope.userid}"> -->
+                      <button onclick="addItemToCart('${detail.product_id}')" type="submit" class="round-black-btn">Add to Cart</button>
+                      <button id="buy-now-btn" class="round-black-btn goCart-btn">Buy Now</button>   
+                    </div>
                   </form>
-<%--                <form action="/initcard?action=add" class="display-flex">--%>
-<%--                    <div class="qtyminus">-</div>--%>
-<%--                    <input type="text" name="quantity" value="1" class="qty" id = "count_product">--%>
-<%--                    <div class="qtyplus">+</div>--%>
-<%--                    <input type="hidden" name="product_id" value="${detail.product_id}">--%>
-<%--                </form>--%>
-<%--                <button onclick="submitForm()" class="round-black-btn">Add to Cart</button>--%>
-<%--                <button class="round-black-btn goCart-btn">Buy Now</button>--%>
+                    
+                      <!-- <button class="round-black-btn goCart-btn" style="margin: 0 8px 0 8px">Buy Now</button> -->
+                <!-- <form action="initcard?action=add" class="display-flex">
+                    <div class="qtyminus">-</div>
+                    <input type="text" name="quantity" value="1" class="qty" id = "count_product">
+                    <div class="qtyplus">+</div>
+                    <input type="hidden" name="product_id" value="${detail.product_id}">
+                    
+                <button onclick="submitForm()" class="round-black-btn">Add to Cart</button>
+              </form>
+
+                <button class="round-black-btn goCart-btn">Buy Now</button> -->
 
               </div>
             </div>
           </div>
         </div>
       </div>
-<%--<script>--%>
+<!-- <%--<script>--%>
 <%--  function submitForm() {--%>
 <%--  document.forms[0].submit();--%>
 <%--  }--%>
-<%--</script>--%>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $("#myForm").submit(function(event) {
-            // Ngăn chặn form được submit theo cách truyền thống.
-            event.preventDefault();
+<%--</script>--%> -->
 
-            // Gửi dữ liệu form bằng AJAX.
-            $.ajax({
-                url: "process-form.php", // đường dẫn đến script xử lý form trên máy chủ
-                type: "POST", // phương thức gửi dữ liệu (POST hoặc GET)
-                data: $(this).serialize(), // dữ liệu form được gửi đi
-                success: function(response) {
-                    // Xử lý phản hồi từ máy chủ nếu cần thiết.
-                    // Ví dụ, bạn có thể cập nhật trang web mà không cần tải lại.
-                },
-                error: function(xhr) {
-                    // Xử lý lỗi nếu có.
-                }
-            });
-        });
-    });
-</script>
 
 
 
@@ -570,6 +561,25 @@ autoplaySpeed: 3000,
 
 });
 </script>
+
+<script>
+
+function addItemToCart() {
+
+  //   var cartRow = document.createElement('div');
+  // 	var cart_rows = cart_item.getElementsByClassName("cart-row");
+  //   cartRow.classList.add('cart-row');
+     var cartItems = document.getElementsByClassName('cart-items')[0];		
+    var cart_title = cartItems.getElementsByClassName('cart-item-title');
+    //Nếu title của sản phẩm bằng với title mà bạn thêm vao giỏ hàng thì sẽ thông báo cho user.
+    for (var i = 0; i < cart_title.length; i++) {
+      if (cart_title[i].innerText === title) {
+        alert('This product is already in the cart!');
+        return;
+      }
+    }
+  }
+  </script>
 
 <script>
   $(document).ready(function() {

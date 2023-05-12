@@ -55,7 +55,7 @@ public class Product {
     }
     // có thểm quantity dùng cho cart
     public Product(int product_id, String product_name, int category_id, String description, double price,
-            double sale_price, int enable, String productImg_path, int quantity,String ac_model) {
+            double sale_price, int enable, String productImg_path,String ac_model, int quantity) {
         this.product_id = product_id;
         this.product_name = product_name;
         this.category_id = category_id;

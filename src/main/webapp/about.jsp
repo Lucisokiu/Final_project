@@ -130,7 +130,7 @@
                 </div>
 
                 <div class="cart-items">
-                  <c:forEach items="${listCart}" var = "o">
+                  <c:forEach items="${sessionScope.listCard}" var = "o">
 
                   <div class="cart-row">
                           <div class="cart-item cart-column">

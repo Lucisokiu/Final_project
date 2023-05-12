@@ -8,6 +8,7 @@ Factory\CategoryFactory$1.class
 Shoes\dao\DAO.class
 Interpreter\ClientInterpreter.class
 Shoes\control\UpdateProfile.class
+Shoes\control\user\HomeController.class
 Builder\ProductBuilder.class
 Factory\CategoryFactory.class
 Shoes\entity\Category.class
@@ -27,13 +28,13 @@ Interpreter\ModelExpression.class
 Factory\Converse.class
 template\ReservationPage.class
 template\ContactPage.class
-Shoes\control\InterpreterController.class
 Interpreter\CheckExpression.class
 Shoes\control\ManagerAccount.class
 Shoes\entity\Cart.class
 Shoes\entity\Account.class
 Command\init.class
 template\PageTemplate.class
+Shoes\control\user\InterpreterController.class
 Factory\Adidas.class
 Shoes\control\CheckoutMail.class
 Command\ChangeCartQuantityCommand.class

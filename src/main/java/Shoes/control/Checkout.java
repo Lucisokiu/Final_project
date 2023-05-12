@@ -17,7 +17,7 @@ import Shoes.entity.Account;
  *
  * @author ADMIN
  */
-@WebServlet(name = "Checkout", urlPatterns = {"/Checkout"})
+@WebServlet(name = "Checkout", urlPatterns = {"/checkout"})
 public class Checkout extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

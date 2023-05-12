@@ -26,11 +26,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet(name = "InterpreterController",urlPatterns = "/InterpreterController")
 public class InterpreterController extends HttpServlet  {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
         DAO dao = new DAO();
         String acModel = request.getParameter("acModel");
         Context context = new Context(acModel);
@@ -45,12 +47,22 @@ public class InterpreterController extends HttpServlet  {
         if(product!=null){
             id = String.valueOf(product.getProduct_id());
         }
+
 //        Product p = dao.getProductByID(id);
 //        request.setAttribute("detail", p);
-        if(product!=null){
-            response.sendRedirect(request.getContextPath() + "/detail?pid="+id);
-        }else{
-            response.sendRedirect(request.getContextPath() + "/HomeController?notice="+notice);
+
+        HttpSession session = request.getSession();
+        if(session.getAttribute("userid") == null)
+        {
+            if(product!=null){
+                response.sendRedirect(request.getContextPath() + "/detail?pid="+id);
+            }else{
+                response.sendRedirect(request.getContextPath() + "/HomeController?notice="+notice);
+            }
+        }
+        else
+        {
+            response.sendRedirect("signIn-signUp.jsp");
         }
     }
     public void doGet(HttpServletRequest request,HttpServletResponse response){

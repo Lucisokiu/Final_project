@@ -119,7 +119,7 @@
         </div>
     </c:if>
 			  
-                    <div id="myModal" class="modal">
+                    <!-- <div id="myModal" class="modal">
                     <div class="modal-content">
                       <div class="modal-header">
                             <h5 class="modal-title">Cart</h5>
@@ -209,7 +209,7 @@
                   </div>
                     </div>
                     </div>
-		</div>
+		</div> -->
 	</nav>
     <!-- END nav -->
     <section class="hero-wrap hero-wrap-2" style="background-image: url('images/img/img-size-l/m_bn_2_2.jpg');" data-stellar-background-ratio="0.5">
@@ -257,7 +257,7 @@
                                         <label for="checkbox1"></label>
                                     </span>
                                 </td>
-                                <td>1</td>
+                                <td>${o.account_id}</td>
                                 <td>${o.email}</td>
                                 <td>${o.address}</td>
                                 <td>${o.userName}</td>

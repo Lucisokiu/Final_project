@@ -10,7 +10,26 @@ public class ProductBuilder {
         private int enable;
         private String productImg_path;
         private int quantity;
-    
+
+        
+
+
+        // public ProductBuilder(Builder builder) {
+        //     this.product_id = builder.product_id;
+        //     this.product_name = builder.product_name;
+        //     this.category_id = builder.category_id;
+        //     this.description = builder.description;
+        //     this.price = builder.price;
+        //     this.sale_price = builder.sale_price;
+        //     this.enable = builder.enable;
+        //     this.productImg_path = builder.productImg_path;
+        //     this.quantity = builder.quantity;
+        // }
+            
+
+
+
+        
         public static class Builder {
             private int product_id;
             private String product_name;
@@ -22,9 +41,8 @@ public class ProductBuilder {
             private String productImg_path;
             private int quantity;
     
-            public Builder setProductId(int product_id) {
+            public Builder(int product_id) {
                 this.product_id = product_id;
-                return this;
             }
     
             public Builder setProductName(String product_name) {
@@ -32,7 +50,7 @@ public class ProductBuilder {
                 return this;
             }
     
-            public Builder setCategoryId(int category_id) {
+            public Builder setCategory_id(int category_id) {
                 this.category_id = category_id;
                 return this;
             }
@@ -69,9 +87,46 @@ public class ProductBuilder {
     
             public ProductBuilder build() {
                 return new ProductBuilder(product_id, product_name, category_id, description, price, sale_price, enable, productImg_path, quantity);
+                // return new ProductBuilder(this);
             }
         }
     
+        public int getProduct_id() {
+            return product_id;
+        }
+
+        public String getProduct_name() {
+            return product_name;
+        }
+
+        public int getCategory_id() {
+            return category_id;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public double getPrice() {
+            return price;
+        }
+
+        public double getSale_price() {
+            return sale_price;
+        }
+
+        public int getEnable() {
+            return enable;
+        }
+
+        public String getProductImg_path() {
+            return productImg_path;
+        }
+
+        public int getQuantity() {
+            return quantity;
+        }
+
         public ProductBuilder(int product_id, String product_name, int category_id, String description, double price, double sale_price, int enable, String productImg_path) {
             this.product_id = product_id;
             this.product_name = product_name;

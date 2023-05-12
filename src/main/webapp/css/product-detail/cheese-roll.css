@@ -10183,6 +10183,23 @@
 .display-flex {
 	display: flex;
 }
+
+.product-infomations {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-buttons-add {
+  display: flex;
+  flex-direction: row;
+}
+
+.product-buttons-add button {
+  margin: 0 5px;
+}
+
 .align-center {
 	align-items: center;
 }

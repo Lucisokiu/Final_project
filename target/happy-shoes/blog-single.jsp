@@ -165,19 +165,11 @@
         </div>
       </div>
       
-<<<<<<< HEAD
       </div> -->
 
       <div class="cart-total">
       <strong class="cart-total-title">Total:</strong>
       <span class="cart-total-price">0$</span>
-=======
-      </div>
-
-      <div class="cart-total">
-      <strong class="cart-total-title">Total:</strong>
-      <span class="cart-total-price">87$</span>
->>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
       </div>
     
     

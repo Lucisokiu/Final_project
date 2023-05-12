@@ -34,11 +34,11 @@ public class Account {
     }
     
     
-    public int getAccountId() {
+    public int getAccount_id() {
         return account_id;
     }
 
-    public void setAccountId(int accountId) {
+    public void setAccount_id(int accountId) {
         this.account_id = accountId;
     }
 

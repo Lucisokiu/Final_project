@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Shoes.dao.DAO;
 import Shoes.entity.Account;
@@ -22,7 +23,7 @@ public class ManagerAccount extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         // HttpSession session = request.getSession();
-        // Account a = (Account) session.getAttribute("acc");
+        // int a = (int) session.getAttribute("username");
         
         DAO dao = new DAO();
         
@@ -37,7 +38,7 @@ public class ManagerAccount extends HttpServlet {
             
         // request.setAttribute("listP", list);
         // request.setAttribute("ListC", listC);
-            
+        
         request.getRequestDispatcher("manager_account.jsp").forward(request, response);
     }
 
@@ -45,8 +46,5 @@ public class ManagerAccount extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
     }
-
-    
-
 }
 

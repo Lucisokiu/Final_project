@@ -41,7 +41,7 @@ public class UpdateProfile extends HttpServlet {
         
         Account a = dao.checkAccountExistbyUserId(userid);
         
-        session.setAttribute("userid", a.getAccountId());
+        session.setAttribute("userid", a.getAccount_id());
         session.setAttribute("username", a.getUserName());
         session.setAttribute("pass", a.getPassword());
         session.setAttribute("fullname", a.getFullName());

@@ -42,11 +42,14 @@
                         </div>
                         <div class="col-12 col-md d-flex justify-content-md-end">
                                 <p class="mb-0">Mở cửa từ thứ Hai đến Chủ Nhật</p>
-                                <div class="right-content">
-                                        <a href="Logout?action=logout" class="avatar">
+                                <c:if test="${sessionScope.acc != null}">
+                                        <div class="right-content">
+                                                <a href="Logout?action=logout" class="avatar">
                                                 <img src="images/logout.png" alt="" class="avatar-img">
-                                            </a>
-                                </div>
+                                                </a>
+                                        </div>
+                                </c:if>
+
                         </div>
 
                         <div class=" right-content mg-left">
@@ -157,7 +160,7 @@
 
 
                             <div class="cart-items">
-                                <c:forEach items="${listCart}" var = "o">
+                                <c:forEach items="${sessionScope.listCard}" var = "o">
               
                                 <div class="cart-row">
                                         <div class="cart-item cart-column">
@@ -179,10 +182,20 @@
               
                             </div>
 
-                            <div class="cart-total">
-                                  <strong class="cart-total-title">Total:</strong>
-                                  <span class="cart-total-price">Price</span>
-                                </div>
+                            <div  id= "totalPrice" class="cart-total">
+
+                                <c:set var="total" value="0" />
+                                <c:forEach var="o" items="${sessionScope.listCard}">
+                                  <c:set var="subtotal" value="${o.quantity * o.price}" />
+                                  <c:set var="total" value="${total + subtotal}" />
+                                </c:forEach>
+                
+                                <strong class="cart-total-title">Total: ${total}</strong>
+                
+                                
+                                
+                                <span class="cart-total-price"></span>
+                              </div>
                       </div>
                             <div class="modal-footer">
                                   <c:if test="${sessionScope.acc == null}">
@@ -684,6 +697,11 @@
                     </div>
             </div>
     </section>
+<script>
+        $(document).ready(function() {
+          var totaldetail = $('#totalPrice span').text;
+        });
+</script>
 <c:import url="/footer.jsp" />
 <!-- <script>
     var close_footer = document.getElementsByClassName("close-footer")[0];

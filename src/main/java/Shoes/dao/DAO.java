@@ -76,9 +76,8 @@ public class DAO {
                         rs.getDouble("sale_price"),
                         rs.getInt("enable"),
                         rs.getString("productImg_path"),
-                        rs.getInt("quantity"),
-                        rs.getString("ac_model"))
-                );
+                        rs.getString("ac_model"),
+                        rs.getInt("quantity")));
             }
         } catch (Exception e) {
             System.out.println("Failed Product: " + e);
@@ -131,8 +130,9 @@ public class DAO {
                         rs.getDouble("sale_price"),
                         rs.getInt("enable"),
                         rs.getString("productImg_path"),
-                        rs.getInt("quantity"),
-                        rs.getString("ac_model")));
+                        rs.getString("ac_model"),
+                        rs.getInt("quantity")));
+
             }
         } catch (Exception e) {
             System.out.println("Failed 1: " + e);
@@ -165,8 +165,9 @@ public class DAO {
                         rs.getDouble("sale_price"),
                         rs.getInt("enable"),
                         rs.getString("productImg_path"),
-                        rs.getInt("quantity"),
-                        rs.getString("ac_model")));
+                        rs.getString("ac_model"),
+                        rs.getInt("quantity")));
+
             }
         } catch (Exception e) {
             System.out.println("Failed 2: " + e);
@@ -200,8 +201,9 @@ public class DAO {
                         rs.getDouble("sale_price"),
                         rs.getInt("enable"),
                         rs.getString("productImg_path"),
-                        rs.getInt("quantity"),
-                        rs.getString("ac_model")));
+                        rs.getString("ac_model"),
+                        rs.getInt("quantity")));
+
         }
         } catch (Exception e) {
             System.out.println("Failed 3: " + e);
@@ -219,7 +221,7 @@ public class DAO {
             rs = ps.executeQuery();
             while(rs.next()){
                 list.add(new Account(
-                        rs.getInt(1),
+                        rs.getInt("account_id"),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getString(4),
@@ -228,10 +230,11 @@ public class DAO {
                         rs.getString(7),
                         rs.getInt(8),
                         rs.getInt(9)));
-            }
+                    }
         } catch (Exception e) {
         }
-        return list;
+     
+    return list;
     }
 
     public Account login(String user, String pass){
@@ -284,7 +287,10 @@ public class DAO {
                 rs.getDouble(5),
                 rs.getDouble(6),
                 rs.getInt(7),
-                rs.getString(8));
+                rs.getString(8),
+                rs.getString(9),
+                rs.getInt(10));
+
             }
         } catch (Exception e) {
             System.out.println("Failed 2: " + e);
@@ -399,7 +405,7 @@ public class DAO {
     }
    
     public  List<ProductBuilder> getCart(int account_id){
-        List<ProductBuilder> listcart = new ArrayList<>();
+        List<ProductBuilder> listCard = new ArrayList<>();
 
         String query = "SELECT p.product_id,p.product_name,p.category_id,p.description,p.price,p.sale_price,p.enable,p.productImg_path, c.quantity        \n" +
                         "FROM cart c \n" +
@@ -410,12 +416,13 @@ public class DAO {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setInt(1, account_id);
-            ps.executeQuery();
+            rs = ps.executeQuery();
             while(rs.next()){
-                ProductBuilder productBuilder = new ProductBuilder.Builder()
-                .setProductId(rs.getInt(1))
+                System.out.println(rs.getInt(1));
+
+                ProductBuilder productBuilder = new ProductBuilder.Builder(rs.getInt(1))
                 .setProductName(rs.getString(2))
-                .setCategoryId(rs.getInt(3))
+                .setCategory_id(rs.getInt(3))
                 .setDescription(rs.getString(4))
                 .setPrice(rs.getDouble(5))
                 .setSalePrice(rs.getDouble(6))
@@ -424,9 +431,14 @@ public class DAO {
                 .setQuantity(rs.getInt(9))
                 .build();
 
-                listcart.add(productBuilder);
+                System.out.println(productBuilder.getProduct_id());
 
-                // listcart.add(new ProductBuilder(rs.getInt(1),
+                
+
+                listCard.add(productBuilder);
+
+
+                // listCard.add(new ProductBuilder(rs.getInt(1),
                 // rs.getString(2),
                 // rs.getInt(3),
                 // rs.getString(4),
@@ -440,7 +452,7 @@ public class DAO {
         } catch (Exception e) {
             System.out.println("Get cart was failed: " + e);
         }
-        return listcart;
+        return listCard;
 
     }
 
@@ -462,15 +474,16 @@ public class DAO {
         
     }
     
-    public  void deleteCart(int account_id, int product_id,int quantity){
+    public  void deleteCart(int account_id, int product_id){
 
-        String query = "DELETE FROM cart WHERE product_id = ?";
+        String query = "DELETE FROM cart WHERE product_id = ? and account_id = ?";
 
         
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setInt(1, product_id);
+            ps.setInt(1, account_id);
             ps.executeUpdate();
         } catch (Exception e) {
             System.out.println("Delete cart was failed: " + e);
@@ -501,8 +514,12 @@ public class DAO {
     public static void main(String[] args) {
         // DAO dao = new DAO();
 
-        // List<Product> list = dao.getAllProducts();
+
         
+        
+        
+
+
         // Factory.Category nike = CategoryFactory.getCategory(CategoryType.NIKE);
 
         // List<Product> listP1 = dao.getProductByCate1(String.valueOf(nike.getCategoryID()));

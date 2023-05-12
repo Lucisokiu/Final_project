@@ -15,7 +15,7 @@ import Builder.ProductBuilder;
 import Shoes.dao.DAO;
 import Shoes.entity.Account;
 
-@WebServlet(name = "init", urlPatterns = {"/initcard"})
+@WebServlet(name = "initcard", urlPatterns = {"/initcard"})
 public class init extends HttpServlet {
 
     // Khởi tạo DAO và CommandFactory
@@ -25,10 +25,11 @@ public class init extends HttpServlet {
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     
     // Hiển thị trang giỏ hàng
+
     // response.setContentType("text/html;charset=UTF-8");
     // List<ProductBuilder> productBuilders = new ArrayList<>();
 
-    // for (Product product : listCart) {
+    // for (Product product : listCard) {
     //     ProductBuilder productcart = new ProductBuilder.Builder()
     //     .setProductId(product.getProduct_id())
     //     .build();
@@ -38,7 +39,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
     // }
 
 
-    // request.setAttribute("listCart", listCart);
+    // request.setAttribute("listCard", listCard);
 
     // request.getRequestDispatcher("detail.jsp").forward(request, response);
 }
@@ -66,6 +67,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
         // Yêu cầu không hợp lệ
         response.sendError(HttpServletResponse.SC_BAD_REQUEST);
     }
+
 }
 
 

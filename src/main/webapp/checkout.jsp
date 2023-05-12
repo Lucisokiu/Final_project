@@ -25,28 +25,29 @@
                     <p class="lead">Please check customer information, cart information before placing an order.</p>
                 </div>
 
+
                 <div class="row">
-                    <!-- <div class="col-md-4 order-md-2 mb-4">
+                    <div class="col-md-4 order-md-2 mb-4">
                         <h4 class="d-flex justify-content-between align-items-center mb-3">
                             <span class="text-muted">Cart</span>
-                            <span class="badge badge-secondary badge-pill">2</span>
+                            <!-- <span class="badge badge-secondary badge-pill">2</span> -->
                         </h4>
-                        
-                        <ul class="list-group mb-3">
-                            <input type="hidden" name="sanphamgiohang[1][sp_ma]" value="2">
+                        <c:forEach items="${sessionScope.listCard}" var = "o">
+                            <ul class="list-group mb-3">
+                            <!-- <input type="hidden" name="sanphamgiohang[1][sp_ma]" value="2">
                             <input type="hidden" name="sanphamgiohang[1][gia]" value="39$">
-                            <input type="hidden" name="sanphamgiohang[1][soluong]" value="2">
+                            <input type="hidden" name="sanphamgiohang[1][soluong]" value="2"> -->
 
                             <li class="list-group-item d-flex justify-content-between lh-condensed">
                                 <div>
                                     <h6 class="my-0">Price</h6>
-                                    <small class="text-muted">100$ x 1</small>
-                                <span class="text-muted">100 $</span>
+                                    <small class="text-muted">${o.price} x ${o.quantity}</small>
+                                <span class="text-muted">${o.price}</span>
                                     <h6 class="my-0">Name Shoes</h6>
-                                    <small class="text-muted">39$ x 2</small>
-                            <input type="hidden" name="sanphamgiohang[2][soluong]" value="1">
+                                    <small class="text-muted">${o.product_name}</small>
+                            <!-- <input type="hidden" name="sanphamgiohang[2][soluong]" value="1"> -->
 
-                            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <!-- <li class="list-group-item d-flex justify-content-between lh-condensed">
                                 <div>
                                     <h6 class="my-0">Price</h6>
                                     <small class="text-muted">700 $ x 2</small>
@@ -56,18 +57,24 @@
                                     <small class="text-muted">39$ x 1</small>
                                 </div>
                                 <span class="text-muted">39$</span>
-                            </li>
+                            </li> -->
                             <li class="list-group-item d-flex justify-content-between">
                                 <span>Shipping</span>
                                 <span class="text-muted">5$</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between">
                                 <span>Total</span>
-                                <strong>1500 $</strong>
+                                <c:set var="total" value="0" />
+                                <c:forEach var="o" items="${sessionScope.listCard}">
+                                  <c:set var="subtotal" value="${o.quantity * o.price}" />
+                                  <c:set var="total" value="${total + subtotal}" />
+                                </c:forEach>
+                                <strong>${total}</strong>
                             </li>
                         </ul>
 
-                    </div> -->
+                    </div>
+                </div>
                     <div class="col-md-8 order-md-1">
                         <h4 class="mb-3">Customer Information</h4>
 

@@ -38,25 +38,22 @@ public class LoginControl extends HttpServlet {
         }
         else{
             
-           Account acc = (Account) session.getAttribute("acc");
-           Account accExist = accountsingleton.checkLogiAccount(acc);
+            Account acc = (Account) session.getAttribute("acc");
+            Account accExist = accountsingleton.checkLoginAccount(acc);
             if ( accExist == null )
             {
-           session.setAttribute("acc", a);
-           session.setAttribute("userid", a.getAccountId());
-           session.setAttribute("username", a.getUserName());
-           session.setAttribute("pass", a.getPassword());
-           session.setAttribute("fullname", a.getFullName());
-           session.setAttribute("email", a.getEmail());
-           session.setAttribute("phone", a.getPhone());
-           session.setAttribute("address", a.getAddress());
+                session.setAttribute("acc", a);
+                session.setAttribute("userid", a.getAccount_id());
+                session.setAttribute("username", a.getUserName());
+                session.setAttribute("pass", a.getPassword());
+                session.setAttribute("fullname", a.getFullName());
+                session.setAttribute("email", a.getEmail());
+                session.setAttribute("phone", a.getPhone());
+                session.setAttribute("address", a.getAddress());
 
-
-           List<ProductBuilder> listCart = dao.getCart(a.getAccountId());
-           session.setAttribute("listCart", listCart);
-
-
-           request.getRequestDispatcher("index.jsp").forward(request, response);
+                List<ProductBuilder> listCard = dao.getCart(a.getAccount_id());
+                session.setAttribute("listCard", listCard);
+                request.getRequestDispatcher("index.jsp").forward(request, response);
             }
             else{
                 request.setAttribute("mess", "Accounts are logged in the other");

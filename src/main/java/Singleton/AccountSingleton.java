@@ -61,7 +61,7 @@ public final class AccountSingleton {
     }
 
 
-    public Account checkLogiAccount(Account user){
+    public Account checkLoginAccount(Account user){
 
         if(user == null)
         return null;

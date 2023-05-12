@@ -132,7 +132,7 @@
                                         </div>
 
                                         <div class="cart-items">
-                                                <c:forEach items="${listCart}" var = "o">
+                                                <c:forEach items="${sessionScope.listCard}" var = "o">
                               
                                                 <div class="cart-row">
                                                         <div class="cart-item cart-column">
@@ -154,10 +154,20 @@
                               
                                             </div>
 
-                                  <div class="cart-total">
-                                        <strong class="cart-total-title">Total:</strong>
-                                        <span class="cart-total-price">Price</span>
-                                  </div>
+                                            <div  id= "totalPrice" class="cart-total">
+
+                                                <c:set var="total" value="0" />
+                                                <c:forEach var="o" items="${sessionScope.listCard}">
+                                                  <c:set var="subtotal" value="${o.quantity * o.price}" />
+                                                  <c:set var="total" value="${total + subtotal}" />
+                                                </c:forEach>
+                                
+                                                <strong class="cart-total-title">Total: ${total}</strong>
+                                
+                                                
+                                                
+                                                <span class="cart-total-price"></span>
+                                              </div>
 
 
                                   <div class="modal-footer">
@@ -208,7 +218,15 @@
                                                 <div class="text">
                                                         <div class="d-flex">
                                                                 <div class="one-half">
-                                                                        <h3><a href="detail?pid=${o.product_id}">${o.product_name}</a></h3>
+
+                                                                        <c:if test="${sessionScope.acc == null}">
+                                                                                <h3><a href="./signIn-signUp.jsp">${o.product_name}</a></h3>
+                                                                            </c:if>
+                                        
+                                                                            <c:if test="${sessionScope.acc != null}">
+                                                                                <h3><a href="detail?pid=${o.product_id}">${o.product_name}</a></h3>
+                                                                        </c:if>
+                                                                        <!-- <h3><a href="detail?pid=${o.product_id}">${o.product_name}</a></h3> -->
                                                                 </div>
                                                                 <div class="one-forth">
                                                                         <span class="price">$ ${o.price}</span>
@@ -338,4 +356,9 @@
                     </div>
             </div>
     </section>
+    <script>
+        $(document).ready(function() {
+          var totaldetail = $('#totalPrice span').text;
+        });
+        </script>
 <c:import url="/footer.jsp" />

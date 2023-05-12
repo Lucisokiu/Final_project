@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Shoes.dao.DAO;
 import Shoes.entity.Product;
@@ -20,6 +21,11 @@ import Shoes.entity.Product;
 public class DetailControl extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // HttpSession session = request.getSession();
+        // int userid = (int) session.getAttribute("userid");
+        // request.setAttribute("userid", userid);
+
+
         String id = request.getParameter("pid");
 
         DAO dao = new DAO();
@@ -28,6 +34,7 @@ public class DetailControl extends HttpServlet {
         List<Product> listP2 = dao.getProductByCate2("2");
         List<Product> listP3 = dao.getProductByCate3("3");
         Product p = dao.getProductByID(id);
+
         request.setAttribute("detail", p);
         // request.setAttribute("ListP", list);
         request.setAttribute("ListP1", listP1);

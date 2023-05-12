@@ -12,6 +12,7 @@ C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\Ma
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Command\AddToCartCommand.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Command\InterfaceCommand.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Singleton\AccountSingleton.java
+C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\user\HomeController.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\template\BlogPage.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Interpreter\ModelExpression.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\template\MenuPage.java
@@ -22,6 +23,7 @@ C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\De
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Factory\Nike.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\Logout.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\context\DBContext.java
+C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\user\InterpreterController.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\CheckoutMail.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Interpreter\BrandExpression.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Builder\ProductBuilder.java
@@ -43,7 +45,6 @@ C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\entity\Cat
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\admin\AddProduct.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Factory\Converse.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Command\init.java
-C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\InterpreterController.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\dao\DAO.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\ManagerAccount.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\SignUpControl.java
