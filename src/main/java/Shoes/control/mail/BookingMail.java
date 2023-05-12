@@ -1,5 +1,5 @@
 
-package Shoes.control;
+package Shoes.control.mail;
 
 import java.io.IOException;
 import java.util.Random;

@@ -44,13 +44,14 @@ public class InterpreterController extends HttpServlet  {
             product = dao.FindByAcmodel(context.getModel());
         }
         String id = null;
-        if(product!=null){
+        if(product != null){
             id = String.valueOf(product.getProduct_id());
         }
 
 //        Product p = dao.getProductByID(id);
 //        request.setAttribute("detail", p);
 
+<<<<<<< HEAD
         HttpSession session = request.getSession();
         if(session.getAttribute("userid") == null)
         {
@@ -63,6 +64,12 @@ public class InterpreterController extends HttpServlet  {
         else
         {
             response.sendRedirect("signIn-signUp.jsp");
+=======
+        if(product!=null){
+            response.sendRedirect(request.getContextPath() + "/detail?pid="+id);
+        }else{
+            response.sendRedirect(request.getContextPath() + "/HomeController?notice="+notice);
+>>>>>>> 74ddff6c6c53e7dc7bce1d1dc35ab89c104aeff9
         }
     }
     public void doGet(HttpServletRequest request,HttpServletResponse response){

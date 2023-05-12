@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package Shoes.control;
+package Shoes.control.mail;
 
 import java.io.IOException;
 import java.util.Random;
@@ -59,9 +59,7 @@ public class CheckoutMail extends HttpServlet {
         } catch (MessagingException e) {
             System.out.println("Unable to send your email");
         }
-        
         getServletContext().getRequestDispatcher(url).forward(request, response);
-        
         
     }
 

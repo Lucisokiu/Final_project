@@ -16,7 +16,7 @@
     
     <main role="main">
         <div class="container mt-4">
-            <form action="Checkout" name="frmthanhtoan" method="post">
+            <form action="${pageContext.request.contextPath}/checkoutMail" name="frmthanhtoan" method="post">
                 <input type="hidden" name="checkoutName" value="${username}">
 
                 <div class="py-5 text-center">
@@ -82,22 +82,22 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label for="checkoutName">User Name</label>
-                                <input type="text" class="form-control" name="username" id="kh_ten"
+                                <label for="kh_tenUser">User Name</label>
+                                <input type="text" class="form-control" name="username" id="kh_tenUser"
                                     value="${username}">
                             </div>
                             <div class="col-md-12">
-                                <label for="usersex">Full Name</label>
-                                <input type="text" class="form-control" name="fullname" id="kh_ten"
+                                <label for="kh_tenName">Full Name</label>
+                                <input type="text" class="form-control" name="fullname" id="kh_tenName"
                                     value="${fullname}">
                             </div>
                             <div class="col-md-12">
-                                <label for="address">Address</label>
+                                <label for="kh_diachi">Address</label>
                                 <input type="text" class="form-control" name="checkoutAddress" id="kh_diachi"
                                     value="${address}">
                             </div>
                             <div class="col-md-12">
-                                <label for="phone">Phone</label>
+                                <label for="kh_dienthoai">Phone</label>
                                 <input type="text" class="form-control" name="checkoutPhone" id="kh_dienthoai"
                                     value="${phone}">
                             </div>

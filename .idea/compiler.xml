@@ -12,7 +12,11 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+<<<<<<< HEAD
       <module name="happy-shoes" options="-endorseddirs C:\Users\MinhNhut\Downloads\Final_project_web-dev\target/endorsed" />
+=======
+      <module name="web-main-project" options="-endorseddirs C:\Users\PC\Desktop\Final_project\target/endorsed" />
+>>>>>>> 74ddff6c6c53e7dc7bce1d1dc35ab89c104aeff9
     </option>
   </component>
 </project>
