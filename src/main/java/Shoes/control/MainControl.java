@@ -30,7 +30,8 @@ public class MainControl extends HttpServlet {
         String action = request.getParameter("action");
         // String user = request.getParameter("user");
         // String email = request.getParameter("email");
-        
+
+
         DAO dao = new DAO();
         List<Account> listA = dao.getAllUser();
         List<Product> list = dao.getAllProducts();
@@ -83,6 +84,8 @@ public class MainControl extends HttpServlet {
 //            url = "/detail.jsp";
 //            response.sendRedirect(request.getContextPath() + "/detail?pid="+id);
         }
+
+        
         getServletContext().getRequestDispatcher(url).forward(request, response);
     }
 

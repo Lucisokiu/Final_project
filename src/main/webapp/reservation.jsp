@@ -116,12 +116,12 @@
 			  
                     <div id="myModal" class="modal">
                     <div class="modal-content">
-                      <div class="modal-header">
+                      <!-- <div class="modal-header">
                             <h5 class="modal-title">Cart</h5>
                             <span class="close">&times;</span>
-                      </div>
+                      </div> -->
 
-                      <div class="modal-body">
+                      <!-- <div class="modal-body">
                             <div class="cart-row">
                               <span class="cart-item cart-header cart-column">Product</span>
                               <span class="cart-price cart-header cart-column">Price</span>
@@ -190,7 +190,7 @@
                       <div class="cart-total">
                             <strong class="cart-total-title">Total:</strong>
                             <span class="cart-total-price">87$</span>
-                      </div>
+                      </div> -->
 
 
                       <div class="modal-footer">
@@ -241,7 +241,7 @@
 								<div class="form-group">
                                                                     <input name="bookingPhone" type="text" class="form-control" placeholder="Phone">
 								</div>
-							</div>
+							</div>  
 							<div class="col-md-4">
 								<div class="form-group">
 									<div class="input-wrap">

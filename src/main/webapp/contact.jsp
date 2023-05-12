@@ -5,11 +5,7 @@
     <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="icon" href="/images/img/blogs/adidas.jpg" type="image/x-icon" />
-<<<<<<< HEAD
     <title>Happy Shoes Shop | Contact </title>
-=======
-    <title>Magic Shop - Bakery | Contact</title>
->>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -42,11 +38,7 @@
 		<div class="container">
 			<div class="row justify-content-between">
 				<div class="col-12 col-md d-flex align-items-center">
-<<<<<<< HEAD
 					<p class="mb-0 phone"><span class="mailus">Phone no:</span> <a href="#">0909374409 </a> or <span class="mailus">email us:</span> <a href="#">nguyenminhnhut435@gmail.com</a></p>
-=======
-					<p class="mb-0 phone"><span class="mailus">Phone no:</span> <a href="#">+84 792 204 127</a> or <span class="mailus">email us:</span> <a href="#">bakerymagicshop25@gmail.com</a></p>
->>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
 				</div>
 				<div class="col-12 col-md d-flex justify-content-md-end">
 					<p class="mb-0">Mở cửa từ thứ Hai đến Chủ Nhật</p>
@@ -123,12 +115,12 @@
 			  
 				<div id="myModal" class="modal">
 				<div class="modal-content">
-				  <div class="modal-header">
+				  <!-- <div class="modal-header">
 					<h5 class="modal-title">Cart</h5>
 					<span class="close">&times;</span>
-				  </div>
+				  </div> -->
 				  
-				  <div class="modal-body">
+				  <!-- <div class="modal-body">
 					<div class="cart-row">
 					  <span class="cart-item cart-header cart-column">Product</span>
 					  <span class="cart-price cart-header cart-column">Price</span>
@@ -144,7 +136,7 @@
 				  <div class="cart-total">
 					<strong class="cart-total-title">Total:</strong>
 					<span class="cart-total-price">87$</span>
-				  </div>
+				  </div> -->
 			  
 			  
 				  <div class="modal-footer">
