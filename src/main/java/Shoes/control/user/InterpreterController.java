@@ -42,11 +42,13 @@ public class InterpreterController extends HttpServlet  {
             product = dao.FindByAcmodel(context.getModel());
         }
         String id = null;
-        if(product!=null){
+        if(product != null){
             id = String.valueOf(product.getProduct_id());
         }
+
 //        Product p = dao.getProductByID(id);
 //        request.setAttribute("detail", p);
+
         if(product!=null){
             response.sendRedirect(request.getContextPath() + "/detail?pid="+id);
         }else{

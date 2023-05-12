@@ -8,12 +8,12 @@ public class Cart {
     
 
     
-    public Cart(int account_id, int product_id, int quality, int order) {
+    public Cart(int account_id, int product_id, int quality) {
         this.account_id = account_id;
         this.product_id = product_id;
         this.quality = quality;
-        this.order = order;
     }
+
     public int getAccount_id() {
         return account_id;
     }

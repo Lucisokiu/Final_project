@@ -59,9 +59,7 @@ public class CheckoutMail extends HttpServlet {
         } catch (MessagingException e) {
             System.out.println("Unable to send your email");
         }
-        
         getServletContext().getRequestDispatcher(url).forward(request, response);
-        
         
     }
 
