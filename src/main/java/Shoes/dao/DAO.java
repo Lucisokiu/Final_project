@@ -410,7 +410,7 @@ public class DAO {
         String query = "SELECT p.product_id,p.product_name,p.category_id,p.description,p.price,p.sale_price,p.enable,p.productImg_path, c.quantity        \n" +
                         "FROM cart c \n" +
                         "JOIN product p ON c.product_id = p.product_id \n" + 
-                        "WHERE c.account_id = ?";
+                        "WHERE c.account_id = ? and ordered = 0";
         
         try {
             conn = new DBContext().getConnection();
@@ -483,13 +483,15 @@ public class DAO {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setInt(1, product_id);
-            ps.setInt(1, account_id);
+            ps.setInt(2, account_id);
             ps.executeUpdate();
         } catch (Exception e) {
             System.out.println("Delete cart was failed: " + e);
         }
     }
 
+
+    
     public  void changeCart(int account_id, int product_id,int quantity){
 
         String query = "update cart\n" +
@@ -508,6 +510,41 @@ public class DAO {
 
     }
 
+
+
+    public  void OderedCart(int account_id, int product_id){
+
+        String query = "UPDATE cart SET ordered = 1 WHERE product_id = ? and account_id = ?";
+
+        
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, product_id);
+            ps.setInt(2, account_id);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Delete cart was failed: " + e);
+        }
+    }
+
+
+
+    public  void changeQuantity(int product_id,int quantity){
+
+        String query = "UPDATE product SET quantity = quantity - ? WHERE product_id = ?";
+
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, quantity);
+            ps.setInt(2, product_id);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Delete product was failed: " + e);
+        }   
+
+    }
 
 
     

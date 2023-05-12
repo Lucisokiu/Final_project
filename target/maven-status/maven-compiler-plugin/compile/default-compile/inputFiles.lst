@@ -1,9 +1,9 @@
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Command\CommandFactory.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Command\ChangeCartQuantityCommand.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\template\TemplateMethodPattern.java
+C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\mail\CheckoutMail.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Factory\CategoryType.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\entity\Product.java
-C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\BookingMail.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\UserControl.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Factory\CategoryFactory.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Factory\Category.java
@@ -24,14 +24,14 @@ C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Factory\Nike.jav
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\Logout.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\context\DBContext.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\user\InterpreterController.java
-C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\CheckoutMail.java
+C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\mail\BookingMail.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Interpreter\BrandExpression.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Builder\ProductBuilder.java
+C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\mail\SubscribeMail.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Factory\Client.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\template\ContactPage.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\LoginControl.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Command\RemoveFromCartCommand.java
-C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\SubscribeMail.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\Checkout.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Interpreter\ClientInterpreter.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\CartControl.java
@@ -47,6 +47,7 @@ C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Factory\Converse
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Command\init.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\dao\DAO.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\ManagerAccount.java
+C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\user\initProductToCartController.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Shoes\control\SignUpControl.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\Interpreter\Expression.java
 C:\Users\MinhNhut\Downloads\Final_project_web-dev\src\main\java\template\HomePage.java

@@ -169,7 +169,7 @@
                                         </div>  
               
                                         <span class="cart-price cart-column">${o.price}</span>
-                                        <span class="cart-price cart-column">${o.quantity}</span>
+                                        <!-- <span class="cart-price cart-column">${o.quantity}</span> -->
               
               
                                         <div class="cart-quantity cart-column">

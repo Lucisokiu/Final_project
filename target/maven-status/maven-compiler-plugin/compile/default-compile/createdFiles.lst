@@ -4,15 +4,16 @@ Factory\Client.class
 Shoes\control\LoginControl.class
 Shoes\entity\Product.class
 Command\CommandFactory.class
+Shoes\control\mail\BookingMail.class
 Factory\CategoryFactory$1.class
 Shoes\dao\DAO.class
 Interpreter\ClientInterpreter.class
+Shoes\control\mail\CheckoutMail.class
 Shoes\control\UpdateProfile.class
 Shoes\control\user\HomeController.class
 Builder\ProductBuilder.class
 Factory\CategoryFactory.class
 Shoes\entity\Category.class
-Shoes\control\SubscribeMail.class
 Factory\CategoryType.class
 template\MenuPage.class
 Shoes\control\CartControl.class
@@ -36,7 +37,7 @@ Command\init.class
 template\PageTemplate.class
 Shoes\control\user\InterpreterController.class
 Factory\Adidas.class
-Shoes\control\CheckoutMail.class
+Shoes\control\user\initProductToCartController.class
 Command\ChangeCartQuantityCommand.class
 Shoes\control\admin\DeleteControl.class
 Shoes\control\Logout.class
@@ -47,7 +48,6 @@ Shoes\control\admin\AddProduct.class
 Shoes\control\DetailControl.class
 Command\RemoveFromCartCommand.class
 template\HomePage.class
-Shoes\control\BookingMail.class
 Interpreter\Expression.class
 template\AboutPage.class
 Singleton\AccountSingleton.class
@@ -55,3 +55,4 @@ template\TemplateMethodPattern.class
 template\BlogPage.class
 Shoes\control\MainControl.class
 Builder\ProductBuilder$Builder.class
+Shoes\control\mail\SubscribeMail.class

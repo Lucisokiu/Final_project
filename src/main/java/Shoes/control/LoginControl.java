@@ -50,6 +50,8 @@ public class LoginControl extends HttpServlet {
                 session.setAttribute("email", a.getEmail());
                 session.setAttribute("phone", a.getPhone());
                 session.setAttribute("address", a.getAddress());
+                session.setAttribute("acc", a);
+
 
                 List<ProductBuilder> listCard = dao.getCart(a.getAccount_id());
                 session.setAttribute("listCard", listCard);

@@ -141,7 +141,7 @@
                                                         </div>  
                               
                                                         <span class="cart-price cart-column">${o.price}</span>
-                                                        <span class="cart-price cart-column">${o.quantity}</span>
+                                                        <!-- <span class="cart-price cart-column">${o.quantity}</span> -->
                               
                               
                                                         <div class="cart-quantity cart-column">
@@ -250,7 +250,14 @@
                                             <div class="text">
                                                 <div class="d-flex">
                                                         <div class="one-half">
-                                                                <h3><a href="detail?pid=${o.product_id}">${o.product_name}</a></h3>
+                                                                <c:if test="${sessionScope.acc == null}">
+                                                                        <h3><a href="./signIn-signUp.jsp">${o.product_name}</a></h3>
+                                                                    </c:if>
+                                
+                                                                    <c:if test="${sessionScope.acc != null}">
+                                                                        <h3><a href="detail?pid=${o.product_id}">${o.product_name}</a></h3>
+                                                                </c:if>
+                                                                <!-- <h3><a href="detail?pid=${o.product_id}">${o.product_name}</a></h3> -->
                                                         </div>
                                                         <div class="one-forth">
                                                                 <span class="price">$ ${o.price}</span>
@@ -274,7 +281,14 @@
                                                         <div class="text">
                                                                 <div class="d-flex">
                                                                         <div class="one-half">
-                                                                                <h3><a href="detail?pid=${o.product_id}">${o.product_name}</a></h3>
+                                                                                <c:if test="${sessionScope.acc == null}">
+                                                                                        <h3><a href="./signIn-signUp.jsp">${o.product_name}</a></h3>
+                                                                                    </c:if>
+                                                
+                                                                                    <c:if test="${sessionScope.acc != null}">
+                                                                                        <h3><a href="detail?pid=${o.product_id}">${o.product_name}</a></h3>
+                                                                                </c:if>
+                                                                                <!-- <h3><a href="detail?pid=${o.product_id}">${o.product_name}</a></h3> -->
                                                                         </div>
                                                                         <div class="one-forth">
                                                                                 <span class="price">$ ${o.price}</span>

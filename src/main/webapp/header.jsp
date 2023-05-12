@@ -49,11 +49,7 @@
         
           <div class=" right-content mg-left">
             <a href="./user-profile.jsp" class="avatar">
-<<<<<<< HEAD
                 <img src="images/test-image.jpg" alt="" class="avatar-img">
-=======
-                <img src="images/img/icon-img/account.png" alt="" class="avatar-img">
->>>>>>> 0fcd112c3ce0f405ae86a71573742c71c17a3134
             </a>
 				</div>
 
@@ -68,7 +64,6 @@
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
-
 			<c:if test="${sessionScope.acc.isAdmin != 1}">
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
