@@ -31,26 +31,20 @@ public class MainControl extends HttpServlet {
         String url= "/index.jsp";
         String action = request.getParameter("action");
 
-        // String user = request.getParameter("user");
-        // String email = request.getParameter("email");
         HttpSession session = request.getSession();
         DAO dao = new DAO();
         List<ProductBuilder> listCard = dao.getCart((int)session.getAttribute("userid"));
         session.setAttribute("listCard", listCard);
-        // List<Account> listA = dao.getAllUser();
-        // List<Product> list = dao.getAllProducts();
         List<Product> listP1 = dao.getProductByCate1("1");
         List<Product> listP2 = dao.getProductByCate2("2");
         List<Product> listP3 = dao.getProductByCate3("3");
         
 
-        
-        // request.setAttribute("ListP", list);
+
         request.setAttribute("ListP1", listP1);
         request.setAttribute("ListP2", listP2);
         request.setAttribute("ListP3", listP3);
-        // request.setAttribute("ListC", listC);
-        // request.setAttribute("ListA", listA);
+
 
         if (action == null){
             action = "home";
@@ -77,20 +71,6 @@ public class MainControl extends HttpServlet {
         else if(action.equals("login")){
             url = "/signIn-signUp.jsp";
         }
-        else if(action.equals("Interpreter")){
-//            String acModel = request.getParameter("acModel");
-//            Context context = new Context(acModel);
-//            String notice=new String();
-//            notice = checkInterpreter(context);
-//            request.setAttribute("notice",notice);
-//            Product product = dao.FindByAcmodel(context.getModel());
-//            String id = String.valueOf(product.getProduct_id());
-//            Product p = dao.getProductByID(id);
-//            request.setAttribute("detail", p);
-//            url = "/detail.jsp";
-//            response.sendRedirect(request.getContextPath() + "/detail?pid="+id);
-        }
-
         
         getServletContext().getRequestDispatcher(url).forward(request, response);
     }

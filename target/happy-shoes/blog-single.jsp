@@ -174,7 +174,7 @@
     
     
       <div class="modal-footer">
-                                <button type="button" class="modal-btn btn-secondary close-footer">Close</button>
+                                <!-- <button type="button" class="modal-btn btn-secondary close-footer">Close</button> -->
                                 <c:if test="${sessionScope.acc == null}">
                                     <a href="./signIn-signUp.jsp"><button type="button" class="modal-btn btn-primary order">Checkout</button></a>
                                 </c:if>

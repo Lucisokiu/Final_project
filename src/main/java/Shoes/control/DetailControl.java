@@ -22,9 +22,7 @@ import Shoes.entity.Product;
 public class DetailControl extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // HttpSession session = request.getSession();
-        // int userid = (int) session.getAttribute("userid");
-        // request.setAttribute("userid", userid);
+
         HttpSession session = request.getSession();
 
         List<ProductBuilder> listCardtest = (List<ProductBuilder>) session.getAttribute("listCard");

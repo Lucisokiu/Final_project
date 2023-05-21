@@ -191,7 +191,7 @@
 			  
 			  
 				  <div class="modal-footer">
-					<button type="button" class="modal-btn btn-secondary close-footer">Close</button>
+					<!-- <button type="button" class="modal-btn btn-secondary close-footer">Close</button> -->
 					<a href="./checkout.jsp"><button type="button" class="modal-btn btn-primary order">Checkout</button></a>
 				  </div>
 				</div>
