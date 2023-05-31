@@ -52,7 +52,7 @@ public class InterpreterController extends HttpServlet  {
 //        request.setAttribute("detail", p);
 
         HttpSession session = request.getSession();
-        if(session.getAttribute("userid") == null)
+        if(session.getAttribute("acc") != null)
         {
             if(product!=null){
                 response.sendRedirect(request.getContextPath() + "/detail?pid="+id);

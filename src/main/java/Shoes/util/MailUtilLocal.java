@@ -33,9 +33,10 @@ public class MailUtilLocal {
         props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         props.put("mail.smtp.port", "587");
         
-        final String myAccountEmail = "tailx0913@gmail.com";
-        final String password = "sjqmqpyyrvupkjkf";
-        
+        final String myAccountEmail = "luci1luv187@gmail.com";
+        final String password = "t0909374409";
+        // final String myAccountEmail = "tailx0913@gmail.com";
+        // final String password = "sjqmqpyyrvupkjkf";
         //get Session
         //Session session = Session.getDefaultInstance(props);
         Session session;

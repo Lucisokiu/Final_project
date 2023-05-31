@@ -216,6 +216,10 @@
                             <textarea name="description" class="form-control" required></textarea>
                         </div>
                         <div class="form-group">
+                            <label>Quantity</label>
+                            <textarea name="quantity" class="form-control" required></textarea>
+                        </div>
+                        <div class="form-group">
                             <label>Category</label>
                             <select name="category" class="form-select" style="text-transform: uppercase" aria-label="Default select example">\
                                 <c:forEach items="${ListC}" var="o">

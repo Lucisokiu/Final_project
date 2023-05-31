@@ -41,8 +41,11 @@
 					<p class="mb-0 phone"><span class="mailus">Phone no:</span> <a href="#">0909374409</a> or <span class="mailus">email us:</span> <a href="#">nguyenminhnhut435@gmail.com</a></p>
 				</div>
 				<div class="col-12 col-md d-flex justify-content-md-end">
-					<p class="mb-0">Mở của từ thứ Hai đến Chủ Nhật</p>
-
+          <div class="right-content">
+            <a href="Logout?action=logout" class="avatar">
+            <img src="images/logout.png" alt="" class="avatar-img">
+            </a>
+    </div>
 				</div>
         <div class=" right-content mg-left">
           <c:if test="${sessionScope.acc == null}">

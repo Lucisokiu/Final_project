@@ -127,8 +127,6 @@
         </c:if>
 
             
-        <!-- <form id="myModal" class="modal" method="post" action="checkout"> -->
-
           <div id="myModal" class="modal">
             <div class="modal-content">
               <div class="modal-header">
@@ -153,14 +151,24 @@
                           </div>  
 
                           <span class="cart-price cart-column">${o.price}</span>
+                          <!-- <span class="cart-price cart-column">${o.quantity}</span> -->
 
-                          <form method="post" action="initcard?action=delete&quantity=${o.quantity}&product_id=${o.product_id}&account_id=${sessionScope.userid}">
+
                           <div class="cart-quantity cart-column">
-                                <input class="cart-quantity-input" type="number" value="${o.quantity}">
-                                <input type="hidden" name="quantity" value="${o.quantity}">
-                                <button class="modal-btn btn-danger" type="button">Delete</button>
+                            <form id="addToCart" action="initcard?action=change" method="post">
+                              <input type="hidden" name="product_id" value="${o.product_id}">
+                              <input type="hidden" name="account_id" value="${sessionScope.userid}">
+                              <input class="cart-quantity-input" type="number" name="quantity" value="${o.quantity}">
+                              <input type="submit" value="Submit">
+                            </form>
+                            <form id="removeToCart" action="initcard?action=remove" method="post">
+                                    <input type="hidden" name="product_id" value="${o.product_id}">
+                                    <input type="hidden" name="account_id" value="${sessionScope.userid}">
+                                    <input type="hidden" name="quantity" value="0">
+                                    <button class="modal-btn btn-danger" type="submit">Delete</button>
+                            </form>
                           </div>
-                          </form>
+
                         </div>
                   </c:forEach>
 
@@ -192,8 +200,11 @@
                     </c:if>
 
                     <c:if test="${sessionScope.acc != null}">
+                      <c:if test="${not empty sessionScope.listCard}">
                         <a href="checkout.jsp"><button type="button" class="modal-btn btn-primary order">Checkout</button></a>
+                      </c:if>
                     </c:if>
+
               </div>
             </div>
             </div>
@@ -571,7 +582,44 @@ function addItemToCart() {
     }
   }
   </script>
+  <script>
+    // Lấy phần tử tổng số tiền
+    const cartTotalElement = document.getElementById('cartTotal');
+    
+    // Lấy danh sách các trường số lượng
+    const quantityInputs = document.getElementsByClassName('cart-quantity-input');
+    
+    // Lặp qua danh sách trường số lượng và lắng nghe sự kiện input
+    Array.from(quantityInputs).forEach(quantityInput => {
+    quantityInput.addEventListener('input', updateTotal);
+    });
+    
+    // Hàm cập nhật tổng số tiền
+    function updateTotal() {
 
+    let total = 0;
+    
+    // Lặp qua danh sách trường số lượng và tính toán tổng số tiền mới
+    Array.from(quantityInputs).forEach(quantityInput => {
+    let newQuantity = parseInt(quantityInput.value);
+    const price = parseFloat(quantityInput.dataset.price);
+    
+    // Kiểm tra giá trị số lượng không nhỏ hơn 0
+    if (newQuantity < 0 || isNaN(newQuantity)) {
+    newQuantity = 0; // Đặt giá trị số lượng bằng 0 nếu nhỏ hơn 0 hoặc không phải số
+    quantityInput.value = newQuantity; // Cập nhật giá trị trên trường số lượng
+    }
+    
+    
+
+    const subtotal = newQuantity * price;
+    total += subtotal;
+    });
+    
+    // Cập nhật giá trị tổng số tiền trên trang
+    cartTotalElement.textContent = total;
+    }
+    </script>  
 <script>
   $(document).ready(function() {
     var totaldetail = $('#totalPrice span').text;

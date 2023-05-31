@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import Shoes.dao.DAO;
 
 import Shoes.entity.Account;
+import Shoes.entity.Product;
 
 /**
  *
@@ -48,15 +49,27 @@ public class Checkout extends HttpServlet {
 
         for (int i = 0; i < productIds.length; i++) {
             int product_id = Integer.parseInt(productIds[i]);
+            String product_id_string = Integer.toString(product_id);
+            int quantity = Integer.parseInt(productQuantitys[i]);
+
+
             System.out.println(product_id);
 
-            
+            Product product_quantity = dao.getProductByID(product_id_string);
+            if(quantity <= product_quantity.getQuantity())
+            {
             dao.OderedCart(id, product_id);
             // dao.deleteCart(id, product_id);
-        
-            int quantity = Integer.parseInt(productQuantitys[i]);
             System.out.println(quantity);
             dao.changeQuantity(product_id, quantity);
+            request.getRequestDispatcher("checkoutMail").forward(request, response);
+            }
+            else
+            {
+                String notice = "Không đủ số lượng";
+                request.setAttribute("notice", notice);
+                request.getRequestDispatcher("MainControl?action=menu").forward(request, response);
+            }
         }
         
 
@@ -64,7 +77,6 @@ public class Checkout extends HttpServlet {
 
         // request.setAttribute("ListA", listA);
         // request.getRequestDispatcher("checkout.jsp");
-        request.getRequestDispatcher("checkoutMail").forward(request, response);
     }
 
     @Override

@@ -23,17 +23,19 @@ public class DBContext {
 //    }
   
      //    MySQL - Local Database
-    private final String hostName = "us-cdbr-east-06.cleardb.net";
+    // private final String hostName = "us-cdbr-east-06.cleardb.net";
+    private final String hostName = "127.0.0.1";
     private final String dbName = "heroku_4888eee88ccd47d";
 //    private final String portNumber = "3306";
     private final String instance="";//LEAVE THIS ONE EMPTY IF YOUR SQL IS A SINGLE INSTANCE
-    private final String userID = "b13dcedb4f3c6e";
-    private final String password = "ebf2823f";
+    private final String userID = "nhut";
+    private final String password = "8512319";
     
     public static void main(String[] args) {
          try {
              System.out.println("Connection ID: " + new DBContext().getConnection());
          } catch (Exception ex) {
+            System.out.println("Connection Fali ");
              Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
          }
     }

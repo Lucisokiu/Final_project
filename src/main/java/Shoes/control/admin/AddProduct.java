@@ -29,7 +29,13 @@ public class AddProduct extends HttpServlet {
        String price = request.getParameter("price");
        String description = request.getParameter("description");
        String category = request.getParameter("category");
+       String quantity = request.getParameter("quantity");
+       int quantity_int = Integer.parseInt(quantity);
 
+        if(quantity_int < 0)
+        {
+            request.getRequestDispatcher("ManagerProductControl").forward(request, response);
+        }
         DAO dao = new DAO();
         dao.addProduct(id, image, name, price, description, category);
         request.getRequestDispatcher("ManagerProductControl").forward(request, response);

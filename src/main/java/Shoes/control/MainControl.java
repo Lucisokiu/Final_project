@@ -33,8 +33,13 @@ public class MainControl extends HttpServlet {
 
         HttpSession session = request.getSession();
         DAO dao = new DAO();
-        List<ProductBuilder> listCard = dao.getCart((int)session.getAttribute("userid"));
-        session.setAttribute("listCard", listCard);
+        
+        if (session.getAttribute("userid") != null) {
+            List<ProductBuilder> listCard = dao.getCart((int)session.getAttribute("userid"));
+            session.setAttribute("listCard", listCard);
+        }
+        
+
         List<Product> listP1 = dao.getProductByCate1("1");
         List<Product> listP2 = dao.getProductByCate2("2");
         List<Product> listP3 = dao.getProductByCate3("3");

@@ -27,7 +27,6 @@ public class DAO {
     ResultSet rs = null;
 
     public Product FindByAcmodel(String acmodel) {
-        List<Product> listP1 = new ArrayList<>();
         String query = "SELECT * FROM product\n" +"where ac_model = ? and enable = 1 ";
         Product product = null;
         try {
@@ -268,7 +267,6 @@ public class DAO {
 
     public Product getProductByID(String id){
 
-
         String query = "select *\n" +
                         "FROM product\n" +
                         "where product_id = ?";
@@ -288,14 +286,13 @@ public class DAO {
                 rs.getDouble(6),
                 rs.getInt(7),
                 rs.getString(8),
-                rs.getString(9),
-                rs.getInt(10));
+                rs.getString(10),
+                rs.getInt(9));
 
             }
         } catch (Exception e) {
             System.out.println("Failed 2: " + e);
         }
-
         return null;
     }
     
@@ -356,10 +353,10 @@ public class DAO {
     }
 
     public  void UpdateUser(int account_id, String username, String pass, String fullname, String email, String phone, String address){
-        String query = "UPDATE user\n" +
-                "set user_name =?, password = ?, fullname = ?,\n" +
+        String query = "UPDATE account\n" +
+                "set userName =?, password = ?, fullName = ?,\n" +
                 "email = ?, phone = ?, address = ?\n" +
-                "where user_id = ?";
+                "where account_id = ?";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
@@ -372,6 +369,7 @@ public class DAO {
             ps.setInt(7, account_id);
             ps.executeUpdate();
         } catch (Exception e) {
+            System.out.println("Failed UpdateUser: " + e);
         }
     }
     
@@ -477,8 +475,6 @@ public class DAO {
             ps.setInt(1, account_id);
             rs = ps.executeQuery();
             while(rs.next()){
-                System.out.println(rs.getInt(1));
-
                 ProductBuilder productBuilder = new ProductBuilder.Builder(rs.getInt(1))
                 .setProductName(rs.getString(2))
                 .setCategory_id(rs.getInt(3))
@@ -544,6 +540,8 @@ public class DAO {
             ps.setInt(1, product_id);
             ps.setInt(2, account_id);
             ps.executeUpdate();
+            System.out.println("Delete cart was sucess with id: " + product_id);
+
         } catch (Exception e) {
             System.out.println("Delete cart was failed: " + e);
         }

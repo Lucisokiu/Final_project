@@ -23,7 +23,8 @@ public class init extends HttpServlet {
 
 @Override
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    
+    doPost(request, response);
+
     // Hiển thị trang giỏ hàng
 
     // response.setContentType("text/html;charset=UTF-8");
@@ -48,15 +49,27 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     // Lấy yêu cầu từ người dùng
     String action = request.getParameter("action");
+
     String account_id_str = request.getParameter("account_id");
+
+    System.out.println("account_id_str " + account_id_str);
+
     int account_id = Integer.parseInt(account_id_str);
     
+
     String product_id_str = request.getParameter("product_id");
+
+    System.out.println("product_id_str " + product_id_str);
+
     int product_id = Integer.parseInt(product_id_str);
     
-    String quantity_str = request.getParameter("quantity");
-    int quantity = Integer.parseInt(quantity_str);
     
+    String quantity_str = request.getParameter("quantity");
+
+    System.out.println("quantity_str " + quantity_str);
+
+    int quantity = Integer.parseInt(quantity_str);
+
 
     // Tạo đối tượng Command tương ứng
     InterfaceCommand command = commandFactory.createCommand(action);

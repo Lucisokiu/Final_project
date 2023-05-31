@@ -42,13 +42,13 @@
                         </div>
                         <div class="col-12 col-md d-flex justify-content-md-end">
                                 <p class="mb-0">Mở cửa từ thứ Hai đến Chủ Nhật</p>
-                                <c:if test="${sessionScope.acc != null}">
+                                <!-- <c:if test="${sessionScope.acc != null}"> -->
                                         <div class="right-content">
                                                 <a href="Logout?action=logout" class="avatar">
                                                 <img src="images/logout.png" alt="" class="avatar-img">
                                                 </a>
                                         </div>
-                                </c:if>
+                                <!-- </c:if> -->
 
                         </div>
 
@@ -169,14 +169,24 @@
                                                 <span class="cart-item-title">${o.product_name}</span>
                                         </div>  
               
-                                        <span class="cart-price cart-column">${o.price}</span>
+                                        <span id="price-cart" class="cart-price cart-column">${o.price}</span>
                                         <!-- <span class="cart-price cart-column">${o.quantity}</span> -->
               
               
                                         <div class="cart-quantity cart-column">
-                                              <input class="cart-quantity-input" type="number" value="${o.quantity}">
-                                              <button class="modal-btn btn-danger" type="button">Delete</button>
-                                        </div>
+                                                <form id="addToCart" action="initcard?action=change" method="post">
+                                                  <input type="hidden" name="product_id" value="${o.product_id}">
+                                                  <input type="hidden" name="account_id" value="${sessionScope.userid}">
+                                                  <input class="cart-quantity-input" type="number" name="quantity" value="${o.quantity}">
+                                                  <input type="submit" value="Submit">
+                                                </form>
+                                                <form id="removeToCart" action="initcard?action=remove" method="post">
+                                                        <input type="hidden" name="product_id" value="${o.product_id}">
+                                                        <input type="hidden" name="account_id" value="${sessionScope.userid}">
+                                                        <input type="hidden" name="quantity" value="0">
+                                                        <button class="modal-btn btn-danger" type="submit">Delete</button>
+                                                </form>
+                                              </div>
               
                                       </div>
                                 </c:forEach>
@@ -191,21 +201,21 @@
                                   <c:set var="total" value="${total + subtotal}" />
                                 </c:forEach>
                 
-                                <strong class="cart-total-title">Total: ${total}</strong>
-                
-                                
+                                <strong class="cart-total-title">Total: <span id="cartTotal">${total}</span></strong>
+                  
                                 
                                 <span class="cart-total-price"></span>
                               </div>
-                      </div>
                             <div class="modal-footer">
                                   <c:if test="${sessionScope.acc == null}">
                                       <a href="./signIn-signUp.jsp"><button type="button" class="modal-btn btn-primary order">Checkout</button></a>
                                   </c:if>
 
                                   <c:if test="${sessionScope.acc != null}">
-                                      <a href="./checkout.jsp"><button type="button" class="modal-btn btn-primary order">Checkout</button></a>
-                                  </c:if>
+                                        <c:if test="${not empty sessionScope.listCard}">
+                                          <a href="checkout.jsp"><button type="button" class="modal-btn btn-primary order">Checkout</button></a>
+                                        </c:if>
+                                      </c:if>
                             </div>
                         </div>
                     </div>
@@ -710,3 +720,40 @@
     modal.style.display = "none";
   };
 </script>-->
+<script>
+        // Lấy phần tử tổng số tiền
+        const cartTotalElement = document.getElementById('cartTotal');
+      
+        // Lấy danh sách các trường số lượng
+        const quantityInputs = document.getElementsByClassName('cart-quantity-input');
+        const priceElements = document.getElementsByClassName('cart-price cart-column');
+      
+        // Lặp qua danh sách trường số lượng và lắng nghe sự kiện input
+        Array.from(quantityInputs).forEach((quantityInput, index) => {
+          quantityInput.addEventListener('input', () => updateTotal(index));
+        });
+      
+        // Hàm cập nhật tổng số tiền
+        function updateTotal(index) {
+          let total = 0;
+      
+          // Lặp qua danh sách trường số lượng và tính toán tổng số tiền mới
+          Array.from(quantityInputs).forEach((quantityInput, i) => {
+            let newQuantity = parseInt(quantityInput.value);
+            let price = parseInt(priceElements[i].textContent);
+            
+            // Kiểm tra giá trị số lượng không nhỏ hơn 0
+            if (newQuantity < 0 || isNaN(newQuantity)) {
+              newQuantity = 0; // Đặt giá trị số lượng bằng 0 nếu nhỏ hơn 0 hoặc không phải số
+              quantityInput.value = newQuantity; // Cập nhật giá trị trên trường số lượng
+            }
+      
+            let subtotal = newQuantity * price;
+            total += subtotal;
+          });
+      
+          // Cập nhật giá trị tổng số tiền trên trang
+          cartTotalElement.textContent = total;
+        }
+      </script>
+      

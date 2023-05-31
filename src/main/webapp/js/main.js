@@ -355,7 +355,7 @@ btn_goCart.onclick = function () {
 	modal.style.display = "block";
   }
 
-// update cart 
+// // update cart 
 // function updatecart() {
 // 	var cart_item = document.getElementsByClassName("cart-items")[0];
 // 	var cart_rows = cart_item.getElementsByClassName("cart-row");
@@ -365,6 +365,10 @@ btn_goCart.onclick = function () {
 // 	  var cart_row = cart_rows[i];
 // 	  var price_item = cart_row.getElementsByClassName("cart-price ")[0];
 // 	  var quantity_item = cart_row.getElementsByClassName("cart-quantity-input")[0];
+// 	  if(quantity_item < 0)
+// 	  {
+// 		document.getElementsByClassName("cart-quantity-input")[0].innerText = 0;
+// 	  }
 // 	  var price = parseFloat(price_item.innerText);// chuyển một chuổi string sang number để tính tổng tiền.
 // 	  var quantity = quantity_item.value; // lấy giá trị trong thẻ input
 // 	  total = total + (price * quantity);

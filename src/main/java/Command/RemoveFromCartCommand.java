@@ -17,7 +17,7 @@ public class RemoveFromCartCommand implements InterfaceCommand{
     public void execute(HttpServletRequest request, HttpServletResponse response,int account_id,int product_id,int quantity) throws ServletException, IOException {
         // xử lý hành vi remove cart
         DAO dao = new DAO();
-        dao.deleteCart(account_id,account_id);
+        dao.deleteCart(account_id,product_id);
         HttpSession session = request.getSession();
         int id = (int) session.getAttribute("userid");
         List<ProductBuilder> listCard = dao.getCart(id);

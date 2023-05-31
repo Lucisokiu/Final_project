@@ -55,6 +55,7 @@ public class LoginControl extends HttpServlet {
 
                 List<ProductBuilder> listCard = dao.getCart(a.getAccount_id());
                 session.setAttribute("listCard", listCard);
+                request.setAttribute("notice", "đăng nhập thành công");
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             }
             else{
